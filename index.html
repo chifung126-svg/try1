@@ -397,7 +397,7 @@
     </div>
   </section>
 
-  <!-- Plans -->
+<!-- Plans -->
   <section id="plan" class="py-24 px-6 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
@@ -408,35 +408,37 @@
           滞在日数に合わせて選べるプラン
         </h2>
         <p class="text-zinc-500 text-lg max-w-2xl mx-auto">
-          短期旅行から出張まで。必要な日数に合わせて、オンラインで簡単に購入できます。
+          短期旅行から出張・長期滞在まで。必要な日数に合わせて、オンラインで簡単に購入できます。
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 items-end">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
 
-        <div class="bg-white rounded-3xl p-8 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
-          <h3 class="text-lg font-semibold text-zinc-500 mb-2">短期旅行向け</h3>
-          <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-zinc-900">3日間</span>
+        <!-- 3 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">短期旅行向け</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">3日間</span>
           </div>
-          <div class="mb-8">
+          <div class="mb-6">
             <span class="text-3xl font-bold text-zinc-900">¥980</span>
             <span class="text-sm text-zinc-400 ml-1">税込</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center gap-3 text-zinc-600">
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               データ通信対応
             </li>
-            <li class="flex items-center gap-3 text-zinc-600">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               QRコード即時発行
             </li>
-            <li class="flex items-center gap-3 text-zinc-600">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
@@ -444,44 +446,46 @@
             </li>
           </ul>
 
-          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
-          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+          <a href="#contact" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
             選択する
           </a>
         </div>
 
-        <div class="bg-zinc-900 rounded-3xl p-8 shadow-2xl relative transform md:-translate-y-4 border border-zinc-800">
+        <!-- 5 Days -->
+        <div class="bg-zinc-900 rounded-3xl p-6 shadow-2xl relative border border-zinc-800 flex flex-col">
           <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-teal-400 text-zinc-950 text-sm font-extrabold px-6 py-1.5 rounded-full shadow-lg tracking-wide whitespace-nowrap">
             一番人気
           </div>
-          <h3 class="text-lg font-semibold text-zinc-400 mb-2 mt-2">初めてのベトナムに</h3>
-          <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-white">5日間</span>
+
+          <h3 class="text-base font-semibold text-zinc-400 mb-2 mt-2">初めてのベトナムに</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-white">5日間</span>
           </div>
-          <div class="mb-8">
-            <span class="text-4xl font-bold text-white">¥1,480</span>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-white">¥1,480</span>
             <span class="text-sm text-zinc-500 ml-1">税込</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center gap-3 text-zinc-300 font-medium">
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
               <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               データ通信対応
             </li>
-            <li class="flex items-center gap-3 text-zinc-300 font-medium">
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
               <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               QRコード即時発行
             </li>
-            <li class="flex items-center gap-3 text-zinc-300 font-medium">
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
               <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               優先日本語サポート
             </li>
-            <li class="flex items-center gap-3 text-zinc-300 font-medium">
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
               <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
@@ -489,35 +493,36 @@
             </li>
           </ul>
 
-          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
-          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all hover:shadow-blue-500/25 active:scale-95">
+          <a href="#contact" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all hover:shadow-blue-500/25 active:scale-95">
             このプランを選ぶ
           </a>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
-          <h3 class="text-lg font-semibold text-zinc-500 mb-2">出張・長期滞在に</h3>
-          <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-zinc-900">7日間</span>
+        <!-- 7 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">出張・長めの旅行に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">7日間</span>
           </div>
-          <div class="mb-8">
+          <div class="mb-6">
             <span class="text-3xl font-bold text-zinc-900">¥1,980</span>
             <span class="text-sm text-zinc-400 ml-1">税込</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center gap-3 text-zinc-600">
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               データ通信対応
             </li>
-            <li class="flex items-center gap-3 text-zinc-600">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
               QRコード即時発行
             </li>
-            <li class="flex items-center gap-3 text-zinc-600">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
               <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
               </svg>
@@ -525,11 +530,101 @@
             </li>
           </ul>
 
-          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
-          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+          <a href="#contact" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
             選択する
           </a>
         </div>
+
+        <!-- 15 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">中長期滞在に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">15日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥2,980</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信対応
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              2週間前後の旅行に便利
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              日本語サポート
+            </li>
+          </ul>
+
+          <a href="#contact" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+            選択する
+          </a>
+        </div>
+
+        <!-- 30 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-blue-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-50 text-blue-700 text-xs font-extrabold px-4 py-1.5 rounded-full border border-blue-100 whitespace-nowrap">
+            長期滞在向け
+          </div>
+
+          <h3 class="text-base font-semibold text-zinc-500 mb-2 mt-2">出張・長期旅行に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">30日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥4,980</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信対応
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              長期滞在・出張に安心
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              日本語サポート
+            </li>
+          </ul>
+
+          <a href="#contact" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 transition-colors active:scale-95">
+            選択する
+          </a>
+        </div>
+
       </div>
 
       <p class="text-center text-sm text-zinc-400 mt-8">
