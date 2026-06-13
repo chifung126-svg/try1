@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ベトナム eSIM | 到着後すぐGrab・地図・LINEが使える高速データ通信</title>
+  <meta name="description" content="ベトナム旅行・出張に便利なデータ通信専用eSIM。QRコードを読み込むだけで、到着後すぐにGrab、Google Maps、LINE、翻訳アプリが使えます。SIMカード差し替え不要、日本語サポート対応。" />
+
+  <link rel="canonical" href="https://esim.easygosim.com/" />
+
+  <meta property="og:title" content="ベトナム eSIM | 到着後すぐGrab・地図・LINEが使える" />
+  <meta property="og:description" content="QRコードを読み込むだけ。ベトナム到着後すぐに4G/5Gデータ通信が利用可能。SIM差し替え不要、日本語サポート対応。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://esim.easygosim.com/" />
+  <meta property="og:site_name" content="Vietnam eSIM by easygosim" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 5s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+    .delay-600 { animation-delay: 600ms; }
+
+    .animate-fade-up,
+    .animate-fade-in {
+      opacity: 0;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "eSIMはいつ設定すればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "出発前にQRコードを読み込んでeSIMを追加し、ベトナム到着後にeSIM回線をオンにする使い方がおすすめです。日本国内ではデータローミングをオンにしないようご注意ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電話番号は付いていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本プランはデータ通信専用です。電話番号、SMS、通常の音声通話には対応していません。LINE、WhatsApp、Messenger、Grabなどインターネット接続を使うアプリをご利用ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Grabは使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、データ通信を利用してGrabアプリをご利用いただけます。ただし、電話番号認証が必要な場合があるため、出発前に日本でGrabの登録を済ませておくことをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どのスマホでも使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "eSIM対応端末かつSIMロック解除済みのスマートフォンで利用できます。タブレットやWi-Fiルーターでの利用可否は端末により異なります。購入前に必ず端末の対応状況をご確認ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "通信速度は保証されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通信速度は現地の電波状況、混雑状況、端末、利用エリアによって変動します。都市部では快適に利用しやすい一方、郊外、地下、建物内では接続が不安定になる場合があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "eSIMを削除しても再インストールできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "一度削除したeSIMは再インストールできない場合があります。接続できない場合でも削除せず、まずサポートまでお問い合わせください。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="min-h-screen bg-zinc-50 font-sans text-zinc-800 selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/60 glass">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-extrabold text-zinc-900 tracking-tight" aria-label="Vietnam eSIM home">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 18.5h.01M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+          </svg>
+        </span>
+        Vietnam eSIM
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-600" aria-label="Main navigation">
+        <a href="#features" class="hover:text-blue-600 transition-colors">特徴</a>
+        <a href="#plan" class="hover:text-blue-600 transition-colors">料金</a>
+        <a href="#area" class="hover:text-blue-600 transition-colors">利用エリア</a>
+        <a href="#how" class="hover:text-blue-600 transition-colors">使い方</a>
+        <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+      </nav>
+
+      <a href="#plan" class="inline-flex items-center justify-center bg-zinc-900 text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-zinc-800 active:scale-95 transition-all">
+        プランを見る
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative pt-28 pb-24 lg:pt-32 lg:pb-32 px-6 lg:px-8 overflow-hidden hero-grid">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-50/95 via-zinc-50/95 to-zinc-50 -z-10"></div>
+    <div class="absolute top-0 right-0 -translate-y-20 translate-x-1/3 w-96 h-96 lg:w-[760px] lg:h-[760px] bg-gradient-to-tr from-blue-200 to-teal-100 rounded-full blur-3xl opacity-60 -z-10"></div>
+    <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-80 h-80 lg:w-[520px] lg:h-[520px] bg-gradient-to-tr from-teal-100 to-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+
+      <div class="flex-1 text-center lg:text-left">
+        <div class="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 text-blue-700 text-sm font-bold mb-6 border border-blue-100 shadow-sm">
+          <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+          ベトナム旅行・出張向け データ通信専用eSIM
+        </div>
+
+        <h1 class="animate-fade-up delay-100 text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-zinc-950 leading-tight lg:leading-[1.08]">
+          ベトナム到着後、<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+            Grab・地図・LINEがすぐ使える。
+          </span>
+        </h1>
+
+        <p class="animate-fade-up delay-200 text-lg lg:text-xl text-zinc-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          SIMカードの差し替えや空港での購入待ちは不要。オンラインで購入後、QRコードを読み込むだけで、ベトナム到着後すぐにデータ通信を利用できます。
+        </p>
+
+        <div class="animate-fade-up delay-300 flex flex-wrap justify-center lg:justify-start gap-3 mb-9">
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-zinc-200 text-sm font-semibold text-zinc-700 shadow-sm">
+            <svg class="w-4 h-4 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+            </svg>
+            QRコードで簡単設定
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-zinc-200 text-sm font-semibold text-zinc-700 shadow-sm">
+            <svg class="w-4 h-4 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>
+            </svg>
+            4G/5G高速通信
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-zinc-200 text-sm font-semibold text-zinc-700 shadow-sm">
+            <svg class="w-4 h-4 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 0 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/>
+            </svg>
+            日本語サポート
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-zinc-200 text-sm font-semibold text-zinc-700 shadow-sm">
+            <svg class="w-4 h-4 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+            </svg>
+            電話番号なし・データ専用
+          </span>
+        </div>
+
+        <div class="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+          <a href="#plan" class="group w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all hover:shadow-xl hover:shadow-zinc-900/20 active:scale-95">
+            料金プランを見る
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/>
+            </svg>
+          </a>
+
+          <a href="#check" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-zinc-100 text-zinc-800 border border-zinc-200 font-bold py-4 px-8 rounded-2xl text-lg transition-all active:scale-95">
+            対応端末を確認
+          </a>
+        </div>
+
+        <div class="animate-fade-up delay-500 mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-sm text-zinc-500">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
+            </svg>
+            iPhone / Android 対応
+          </div>
+          <div class="hidden sm:block w-1 h-1 rounded-full bg-zinc-300"></div>
+          <div>空港でSIMを探す手間なし</div>
+          <div class="hidden sm:block w-1 h-1 rounded-full bg-zinc-300"></div>
+          <div>購入後メールでQRコード送付</div>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="flex-1 hidden lg:flex justify-center relative animate-fade-up delay-200">
+        <div class="absolute inset-0 bg-gradient-to-tr from-blue-400 to-teal-300 rounded-full blur-[80px] opacity-30 animate-pulse-slow"></div>
+
+        <div class="relative w-[330px] h-[640px] bg-white/50 backdrop-blur-xl rounded-[2.7rem] border border-white/70 shadow-2xl overflow-hidden flex flex-col z-10 p-2 animate-float">
+          <div class="w-full h-full bg-zinc-950 rounded-[2.2rem] overflow-hidden flex flex-col relative">
+            <div class="absolute top-0 inset-x-0 h-7 bg-black rounded-b-2xl w-36 mx-auto z-20"></div>
+
+            <div class="flex-1 bg-gradient-to-b from-blue-600 via-blue-700 to-zinc-950 p-8 flex flex-col items-center justify-center text-white text-center relative overflow-hidden">
+              <div class="absolute top-16 left-10 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+              <div class="absolute bottom-20 right-8 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl"></div>
+
+              <div class="relative z-10 w-full flex flex-col items-center animate-fade-in delay-500">
+                <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center border border-white/20 mb-6 shadow-lg">
+                  <svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 5-3.2 3.2-2.7-.9-.8.8 2.2 3.3 3.3 2.2.8-.8-.9-2.7L11 15l5 6c.4-.2.7-.6.6-1.1Z"/>
+                  </svg>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-1 tracking-wide">Vietnam eSIM</h3>
+                <p class="text-teal-300 font-semibold mb-8">4G / 5G Data Plan</p>
+
+                <div class="bg-white p-4 rounded-3xl shadow-2xl w-52 h-52 flex items-center justify-center">
+                  <svg class="w-full h-full text-zinc-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <rect width="5" height="5" x="3" y="3" rx="1" stroke-width="2"/>
+                    <rect width="5" height="5" x="16" y="3" rx="1" stroke-width="2"/>
+                    <rect width="5" height="5" x="3" y="16" rx="1" stroke-width="2"/>
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/>
+                  </svg>
+                </div>
+
+                <div class="mt-8 w-full bg-white/10 border border-white/10 rounded-2xl p-4 text-left">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-white/70">Status</span>
+                    <span class="text-xs px-2 py-1 rounded-full bg-teal-400 text-zinc-950 font-bold">Active</span>
+                  </div>
+                  <div class="text-sm font-semibold">Connected in Vietnam</div>
+                  <div class="text-xs text-white/50 mt-1">Data only / No phone number</div>
+                </div>
+
+                <p class="mt-6 text-sm text-white/60 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-teal-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>
+                  </svg>
+                  Scan QR to connect
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -right-3 top-28 bg-white rounded-2xl shadow-xl border border-zinc-100 p-4 z-20 animate-fade-up delay-600">
+          <div class="text-xs text-zinc-500 mb-1">設定時間</div>
+          <div class="font-extrabold text-zinc-900">約3分</div>
+        </div>
+
+        <div class="absolute -left-3 bottom-24 bg-white rounded-2xl shadow-xl border border-zinc-100 p-4 z-20 animate-fade-up delay-600">
+          <div class="text-xs text-zinc-500 mb-1">SIM差し替え</div>
+          <div class="font-extrabold text-zinc-900">不要</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="py-5 px-6 bg-zinc-900 text-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+      <div>
+        <div class="text-lg lg:text-xl font-extrabold">即時発行</div>
+        <div class="text-xs text-zinc-400 mt-1">購入後メールでお届け</div>
+      </div>
+      <div>
+        <div class="text-lg lg:text-xl font-extrabold">QR設定</div>
+        <div class="text-xs text-zinc-400 mt-1">アプリ不要で簡単</div>
+      </div>
+      <div>
+        <div class="text-lg lg:text-xl font-extrabold">4G/5G</div>
+        <div class="text-xs text-zinc-400 mt-1">都市部で快適通信</div>
+      </div>
+      <div>
+        <div class="text-lg lg:text-xl font-extrabold">日本語対応</div>
+        <div class="text-xs text-zinc-400 mt-1">困った時も安心</div>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <div class="text-lg lg:text-xl font-extrabold">データ専用</div>
+        <div class="text-xs text-zinc-400 mt-1">電話番号・SMSなし</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-24 px-6 bg-white border-y border-zinc-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm mb-4">
+          Why eSIM?
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-4">
+          空港でSIMを買うより、ずっとスマート。
+        </h2>
+        <p class="text-zinc-500 text-lg max-w-2xl mx-auto">
+          旅行前に準備しておけば、到着後すぐにマップ・配車アプリ・メッセージが使えます。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-white hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-zinc-100 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">SIMカード不要</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            物理SIMの差し替え、SIMピンの準備、紛失リスクはありません。日本のSIMを入れたまま、データ通信を追加できます。
+          </p>
+        </div>
+
+        <div class="group p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-white hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-zinc-100 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">到着後すぐ使える</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            旅行前にQRコードを設定しておけば、ベトナム到着後にeSIMをオンにするだけ。空港からすぐにGrabや地図を使えます。
+          </p>
+        </div>
+
+        <div class="group p-8 rounded-3xl bg-zinc-50 border border-zinc-100 transition-all hover:bg-white hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 duration-300">
+          <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-zinc-100 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 0 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">日本語サポート</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            設定で迷った時も安心。出発前・旅行中の不安をメールまたはLINEで日本語サポートします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="py-24 px-6 bg-zinc-50">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex px-4 py-2 rounded-full bg-teal-50 text-teal-700 font-bold text-sm mb-4">
+          Travel Ready
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-6 leading-tight">
+          旅行に必要なアプリを、到着直後から。
+        </h2>
+        <p class="text-lg text-zinc-600 leading-relaxed mb-8">
+          ベトナムでは地図、配車、翻訳、メッセージアプリの利用頻度が高くなります。eSIMを事前に準備しておくことで、空港到着後の移動もスムーズです。
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100 shadow-sm">
+            <div class="font-bold text-zinc-900 mb-1">Google Maps</div>
+            <div class="text-sm text-zinc-500">ホテルや観光地への移動、レストラン検索に</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100 shadow-sm">
+            <div class="font-bold text-zinc-900 mb-1">Grab</div>
+            <div class="text-sm text-zinc-500">空港からホテルまでの配車に便利</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100 shadow-sm">
+            <div class="font-bold text-zinc-900 mb-1">LINE / WhatsApp</div>
+            <div class="text-sm text-zinc-500">日本の家族や友人との連絡に</div>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100 shadow-sm">
+            <div class="font-bold text-zinc-900 mb-1">翻訳アプリ</div>
+            <div class="text-sm text-zinc-500">レストラン、買い物、タクシーでも安心</div>
+          </div>
+        </div>
+
+        <p class="text-xs text-zinc-400 mt-5">
+          ※ Grabなど一部アプリでは電話番号認証が必要な場合があります。出発前に登録を済ませておくことをおすすめします。
+        </p>
+      </div>
+
+      <div class="bg-white rounded-[2rem] p-8 lg:p-10 border border-zinc-100 shadow-xl shadow-blue-900/5">
+        <h3 class="text-2xl font-extrabold text-zinc-950 mb-6">こんな方におすすめ</h3>
+
+        <div class="space-y-5">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex-shrink-0 flex items-center justify-center font-bold">1</div>
+            <div>
+              <div class="font-bold text-zinc-900">空港ですぐ移動したい方</div>
+              <p class="text-zinc-500 text-sm mt-1">SIMカウンターを探す時間を節約できます。</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex-shrink-0 flex items-center justify-center font-bold">2</div>
+            <div>
+              <div class="font-bold text-zinc-900">初めてeSIMを使う方</div>
+              <p class="text-zinc-500 text-sm mt-1">QRコードを読み込むだけで、アプリ不要で設定できます。</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex-shrink-0 flex items-center justify-center font-bold">3</div>
+            <div>
+              <div class="font-bold text-zinc-900">海外ローミング費用を抑えたい方</div>
+              <p class="text-zinc-500 text-sm mt-1">渡航先専用プランでコストを管理しやすくなります。</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex-shrink-0 flex items-center justify-center font-bold">4</div>
+            <div>
+              <div class="font-bold text-zinc-900">SIMカードを入れ替えたくない方</div>
+              <p class="text-zinc-500 text-sm mt-1">日本のSIMを入れたまま、データ通信を追加できます。</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#plan" class="mt-8 inline-flex w-full justify-center items-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition-all active:scale-95">
+          自分に合うプランを見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area -->
+  <section id="area" class="py-24 px-6 bg-white border-y border-zinc-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm mb-4">
+            Coverage
+          </span>
+          <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-6 leading-tight">
+            主要都市・観光地で使いやすいベトナムeSIM。
+          </h2>
+          <p class="text-lg text-zinc-600 leading-relaxed">
+            ホーチミン、ハノイ、ダナンなどの都市部を中心に、旅行中の地図、配車、メッセージ、翻訳アプリ利用に便利です。
+          </p>
+          <p class="text-sm text-zinc-400 mt-5">
+            ※ 通信品質は現地ネットワーク、混雑状況、端末、建物内、地下、郊外、山間部などにより変動します。
+          </p>
+        </div>
+
+        <div class="bg-zinc-50 rounded-[2rem] p-8 border border-zinc-100">
+          <h3 class="text-2xl font-extrabold text-zinc-950 mb-6">主な利用エリア</h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">ホーチミン</div>
+              <div class="text-sm text-zinc-500 mt-1">市内観光・空港移動に</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">ハノイ</div>
+              <div class="text-sm text-zinc-500 mt-1">旧市街・市内移動に</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">ダナン</div>
+              <div class="text-sm text-zinc-500 mt-1">ビーチ・市内観光に</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">ホイアン</div>
+              <div class="text-sm text-zinc-500 mt-1">観光地での連絡に</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">フエ</div>
+              <div class="text-sm text-zinc-500 mt-1">移動・地図利用に</div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+              <div class="font-bold text-zinc-900">ニンビンなど</div>
+              <div class="text-sm text-zinc-500 mt-1">郊外では状況により変動</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plan" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm mb-4">
+          Simple Pricing
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-4">
+          滞在日数に合わせて選べるプラン
+        </h2>
+        <p class="text-zinc-500 text-lg max-w-2xl mx-auto">
+          短期旅行から出張・長期滞在まで。必要な日数に合わせて、オンラインで簡単に購入できます。
+        </p>
+      </div>
+
+      <div class="mb-8 max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-3xl p-5 text-center">
+        <p class="text-sm text-amber-800 font-semibold">
+          ご購入前に必ずご確認ください：本商品は<strong>データ通信専用eSIM</strong>です。電話番号・SMS・通常の音声通話はご利用いただけません。
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
+
+        <!-- 3 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">短期旅行向け</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">3日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥980</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信専用
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              Google Maps・Grab対応
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-amber-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              電話番号・SMSなし
+            </li>
+          </ul>
+
+          <a href="https://www.easygosim.com/cart/add?id=48730479427739&quantity=1&return_to=/cart" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+            3日間を選択
+          </a>
+        </div>
+
+        <!-- 5 Days -->
+        <div class="bg-zinc-900 rounded-3xl p-6 shadow-2xl relative border border-zinc-800 flex flex-col">
+          <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-teal-400 text-zinc-950 text-sm font-extrabold px-6 py-1.5 rounded-full shadow-lg tracking-wide whitespace-nowrap">
+            一番人気
+          </div>
+
+          <h3 class="text-base font-semibold text-zinc-400 mb-2 mt-2">初めてのベトナムに</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-white">5日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-white">¥1,480</span>
+            <span class="text-sm text-zinc-500 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
+              <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信専用
+            </li>
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
+              <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
+              <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              Grab・地図・LINEに便利
+            </li>
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
+              <svg class="w-5 h-5 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              優先日本語サポート
+            </li>
+            <li class="flex items-center gap-3 text-zinc-300 font-medium text-sm">
+              <svg class="w-5 h-5 text-amber-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              電話番号・SMSなし
+            </li>
+          </ul>
+
+          <a href="https://www.easygosim.com/cart/add?id=48730479460507&quantity=1&return_to=/cart" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all hover:shadow-blue-500/25 active:scale-95">
+            5日間を選ぶ
+          </a>
+        </div>
+
+        <!-- 7 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">出張・長めの旅行に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">7日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥1,980</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信専用
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              長めの滞在に安心
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-amber-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              電話番号・SMSなし
+            </li>
+          </ul>
+
+          <a href="https://www.easygosim.com/cart/add?id=48730479493275&quantity=1&return_to=/cart" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+            7日間を選択
+          </a>
+        </div>
+
+        <!-- 15 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <h3 class="text-base font-semibold text-zinc-500 mb-2">中長期滞在に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">15日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥2,480</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信専用
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              2週間前後の旅行に便利
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              日本語サポート
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-amber-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 0 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              電話番号・SMSなし
+            </li>
+          </ul>
+
+          <a href="https://www.easygosim.com/cart/add?id=48730479526043&quantity=1&return_to=/cart" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+            15日間を選択
+          </a>
+        </div>
+
+        <!-- 30 Days -->
+        <div class="bg-white rounded-3xl p-6 border border-blue-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-50 text-blue-700 text-xs font-extrabold px-4 py-1.5 rounded-full border border-blue-100 whitespace-nowrap">
+            長期滞在向け
+          </div>
+
+          <h3 class="text-base font-semibold text-zinc-500 mb-2 mt-2">出張・長期旅行に</h3>
+          <div class="flex items-baseline gap-2 mb-5">
+            <span class="text-3xl font-extrabold text-zinc-900">30日間</span>
+          </div>
+          <div class="mb-6">
+            <span class="text-3xl font-bold text-zinc-900">¥2,950</span>
+            <span class="text-sm text-zinc-400 ml-1">税込</span>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              データ通信専用
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              QRコード即時発行
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              長期滞在・出張に安心
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-blue-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              日本語サポート
+            </li>
+            <li class="flex items-center gap-3 text-zinc-600 text-sm">
+              <svg class="w-5 h-5 text-amber-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636 5.636 18.364M12 22a10 10 0 0 0 0-20 10 10 0 0 0 0 20Z"/>
+              </svg>
+              電話番号・SMSなし
+            </li>
+          </ul>
+
+          <a href="https://www.easygosim.com/cart/add?id=48730479558811&quantity=1&return_to=/cart" class="block text-center w-full py-4 px-5 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 transition-colors active:scale-95">
+            30日間を選択
+          </a>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-8 text-center">
+        <p class="text-sm text-zinc-400">
+          ※ 通信速度・5G対応は利用エリア、端末、現地ネットワーク状況により異なります。
+        </p>
+        <p class="text-sm text-zinc-400 mt-2">
+          ※ テザリングは端末や現地ネットワーク状況により利用可否が異なる場合があります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to use -->
+  <section id="how" class="py-24 px-6 bg-zinc-50 border-t border-zinc-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm mb-4">
+          How It Works
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-4">
+          ご利用までの3ステップ
+        </h2>
+        <p class="text-zinc-500 text-lg">
+          アプリのダウンロード不要。スマホの設定から簡単に利用できます。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <div class="hidden md:block absolute top-16 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-blue-100 via-blue-300 to-blue-100"></div>
+
+        <div class="relative bg-white rounded-3xl p-8 text-center border border-zinc-100 shadow-sm">
+          <div class="w-16 h-16 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl mb-8 shadow-lg shadow-blue-600/20 rotate-3 hover:rotate-0 transition-transform">
+            1
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">プランを購入</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            滞在日数に合わせてプランを選択し、オンラインで決済を完了します。
+          </p>
+        </div>
+
+        <div class="relative bg-white rounded-3xl p-8 text-center border border-zinc-100 shadow-sm">
+          <div class="w-16 h-16 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl mb-8 shadow-lg shadow-blue-600/20 rotate-3 hover:rotate-0 transition-transform">
+            2
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">QRコードを受け取る</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            決済完了後、設定用のQRコードがメールで届きます。迷惑メールフォルダもご確認ください。
+          </p>
+        </div>
+
+        <div class="relative bg-white rounded-3xl p-8 text-center border border-zinc-100 shadow-sm">
+          <div class="w-16 h-16 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-2xl mb-8 shadow-lg shadow-blue-600/20 rotate-3 hover:rotate-0 transition-transform">
+            3
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">到着後オンにする</h3>
+          <p class="text-zinc-500 leading-relaxed">
+            ベトナム到着後、スマホ設定からeSIMを有効化すると通信が始まります。
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-white rounded-3xl p-6 border border-zinc-100 shadow-sm">
+        <h3 class="text-xl font-extrabold text-zinc-950 mb-4">設定時の注意</h3>
+        <ul class="space-y-3 text-sm text-zinc-600">
+          <li>・出発前にeSIMを追加し、ベトナム到着後に回線をオンにするのがおすすめです。</li>
+          <li>・接続できない場合でも、eSIMプロファイルを削除しないでください。削除すると再インストールできない場合があります。</li>
+          <li>・日本で利用中のSIMは必要に応じてオフにし、ベトナムeSIMをモバイルデータ通信に設定してください。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compatibility -->
+  <section id="check" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex px-4 py-2 rounded-full bg-amber-50 text-amber-700 font-bold text-sm mb-4">
+          Before Purchase
+        </span>
+        <h2 class="text-4xl font-extrabold text-zinc-950 mb-6">
+          購入前にeSIM対応端末か確認してください
+        </h2>
+        <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+          eSIMを利用するには、端末がeSIMに対応しており、SIMロックが解除されている必要があります。ご購入前に必ずご利用端末の設定をご確認ください。
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mt-0.5">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+              </svg>
+            </div>
+            <p class="text-zinc-600">iPhoneの場合、「設定」からeSIM追加に対応しているか確認できます。</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mt-0.5">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+              </svg>
+            </div>
+            <p class="text-zinc-600">Androidの場合、機種や販売地域により対応状況が異なります。</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mt-0.5">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/>
+              </svg>
+            </div>
+            <p class="text-zinc-600">SIMロック端末では利用できない場合があります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-zinc-50 border border-zinc-100 rounded-[2rem] p-8">
+        <h3 class="text-2xl font-extrabold text-zinc-900 mb-6">購入前チェックリスト</h3>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+            <div class="font-bold text-zinc-900 mb-1">1. eSIM対応端末ですか？</div>
+            <p class="text-sm text-zinc-500">端末設定に「eSIMを追加」または「モバイル通信プランを追加」があるか確認してください。</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+            <div class="font-bold text-zinc-900 mb-1">2. SIMロック解除済みですか？</div>
+            <p class="text-sm text-zinc-500">キャリアで購入した端末は、SIMロック状況をご確認ください。</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+            <div class="font-bold text-zinc-900 mb-1">3. QRコードを表示できる別端末はありますか？</div>
+            <p class="text-sm text-zinc-500">QRコード設定時、別のスマホやPCに表示するとスムーズです。</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+            <div class="font-bold text-zinc-900 mb-1">4. データ通信専用で問題ありませんか？</div>
+            <p class="text-sm text-zinc-500">電話番号、SMS、通常の音声通話はご利用いただけません。</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 border border-zinc-100">
+            <div class="font-bold text-zinc-900 mb-1">5. eSIMを削除しないでください</div>
+            <p class="text-sm text-zinc-500">接続できない場合も削除せず、まずサポートまでお問い合わせください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="py-24 px-6 bg-zinc-50 border-t border-zinc-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="inline-flex px-4 py-2 rounded-full bg-teal-50 text-teal-700 font-bold text-sm mb-4">
+          Compare
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-4">
+          Wi-Fiレンタルや空港SIMより手軽。
+        </h2>
+        <p class="text-zinc-500 text-lg max-w-2xl mx-auto">
+          eSIMなら、荷物を増やさず、空港で並ばず、旅行前にネット環境を準備できます。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-8 border border-blue-200 shadow-sm">
+          <div class="text-blue-600 font-extrabold mb-2">Vietnam eSIM</div>
+          <ul class="space-y-3 text-sm text-zinc-600">
+            <li>・SIM差し替え不要</li>
+            <li>・QRコードで設定</li>
+            <li>・購入後メールで受け取り</li>
+            <li>・空港到着後すぐ使える</li>
+            <li>・日本語サポート</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 border border-zinc-100 shadow-sm">
+          <div class="text-zinc-900 font-extrabold mb-2">空港SIM</div>
+          <ul class="space-y-3 text-sm text-zinc-600">
+            <li>・到着後に店舗を探す必要あり</li>
+            <li>・混雑時は待ち時間が発生</li>
+            <li>・SIMカード差し替えが必要</li>
+            <li>・言語対応に不安がある場合も</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 border border-zinc-100 shadow-sm">
+          <div class="text-zinc-900 font-extrabold mb-2">Wi-Fiレンタル</div>
+          <ul class="space-y-3 text-sm text-zinc-600">
+            <li>・端末の受取・返却が必要</li>
+            <li>・充電管理が必要</li>
+            <li>・荷物が増える</li>
+            <li>・複数人で離れると使いにくい</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24 px-6 bg-white border-t border-zinc-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm mb-4">
+          FAQ
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-4">
+          よくある質問
+        </h2>
+        <p class="text-zinc-500 text-lg">
+          購入前によくある不安をまとめました。
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            eSIMはいつ設定すればいいですか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            出発前にQRコードを読み込んでeSIMを追加し、ベトナム到着後にeSIM回線をオンにする使い方がおすすめです。日本国内ではデータローミングをオンにしないようご注意ください。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            電話番号は付いていますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            いいえ。本プランはデータ通信専用です。電話番号、SMS、通常の音声通話には対応していません。LINE、WhatsApp、Messengerなどのインターネット通話やメッセージアプリをご利用ください。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            Grabは使えますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            はい。データ通信を利用してGrabアプリをご利用いただけます。ただし、Grabのアカウント登録や電話番号認証が必要な場合があります。出発前に日本で登録を済ませておくことをおすすめします。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            どのスマホでも使えますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            eSIM対応端末かつSIMロック解除済みのスマートフォンで利用できます。購入前に必ず端末の対応状況をご確認ください。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            通信速度は保証されますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            通信速度は現地の電波状況、混雑状況、端末、利用エリアによって変動します。都市部では快適に利用しやすい一方、郊外、地下、建物内では接続が不安定になる場合があります。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            テザリングは使えますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            端末や現地ネットワーク状況により利用できる場合があります。ただし、すべての端末・環境でのテザリング利用を保証するものではありません。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            eSIMを削除しても再インストールできますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            一度削除したeSIMは再インストールできない場合があります。接続できない場合でも削除せず、まずサポートまでお問い合わせください。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            QRコードが届かない場合は？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            迷惑メールフォルダをご確認ください。それでも確認できない場合は、注文番号と購入時のメールアドレスを添えてサポートまでお問い合わせください。
+          </p>
+        </details>
+
+        <details class="group bg-zinc-50 rounded-2xl border border-zinc-100 p-6 shadow-sm">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-zinc-900">
+            キャンセル・返品はできますか？
+            <span class="text-blue-600 group-open:rotate-45 transition-transform text-2xl leading-none flex-shrink-0">+</span>
+          </summary>
+          <p class="text-zinc-500 mt-4 leading-relaxed">
+            eSIMはQRコード情報が商品となるため、発行後のお客様都合によるキャンセル・返品・交換はお受けできない場合があります。購入前に対応端末、日数、渡航先をご確認ください。
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">
+        Contact
+      </span>
+
+      <h2 class="text-3xl md:text-5xl font-black text-zinc-900 mt-3 mb-6">
+        ご購入・お問い合わせ
+      </h2>
+
+      <p class="text-zinc-600 text-lg leading-relaxed mb-10">
+        ご購入前のご質問や、設定に関するご不明点がございましたら、
+        メールまたはLINEよりお気軽にお問い合わせください。
+      </p>
+
+      <div class="bg-zinc-50 rounded-3xl border border-zinc-100 p-6 mb-8 text-left">
+        <h3 class="font-extrabold text-zinc-950 mb-3">お問い合わせ時にご記載ください</h3>
+        <ul class="text-sm text-zinc-600 space-y-2">
+          <li>・ご注文番号</li>
+          <li>・購入時のメールアドレス</li>
+          <li>・ご利用端末名、例：iPhone 15 / Pixel 8 など</li>
+          <li>・現在の状況、例：QRコード未着、接続できない、設定方法が分からない等</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="mailto:sales@easygosim.com?subject=Vietnam%20eSIM%20Inquiry"
+          class="inline-flex justify-center items-center bg-zinc-900 hover:bg-zinc-800 text-white font-bold py-4 px-8 rounded-2xl transition-all active:scale-95"
+        >
+          メールで問い合わせる
+        </a>
+
+        <a
+          href="https://line.me/R/ti/p/@712unbyr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex justify-center items-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl transition-all active:scale-95"
+        >
+          LINEで問い合わせる
+        </a>
+
+        <a
+          href="#plan"
+          class="inline-flex justify-center items-center bg-white hover:bg-zinc-50 text-zinc-900 font-bold py-4 px-8 rounded-2xl border border-zinc-200 transition-all active:scale-95"
+        >
+          プランに戻る
+        </a>
+      </div>
+
+      <p class="text-sm text-zinc-400 mt-6">
+        ※ ご返信は通常1営業日以内に行います。旅行直前の方はLINEでのお問い合わせがおすすめです。
+      </p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 px-6 bg-zinc-900 text-center text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent"></div>
+    <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 lg:w-[540px] lg:h-[540px] bg-blue-500/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <svg class="w-16 h-16 mx-auto mb-8 text-teal-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 5-3.2 3.2-2.7-.9-.8.8 2.2 3.3 3.3 2.2.8-.8-.9-2.7L11 15l5 6c.4-.2.7-.6.6-1.1Z"/>
+      </svg>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
+        ベトナム旅行のネット準備は、<br />
+        これで完了。
+      </h2>
+
+      <p class="text-lg text-zinc-400 mb-10 max-w-xl mx-auto">
+        空港でSIMカードを探す手間はもう不要。到着した瞬間から、Grab・地図・LINEが使える環境を準備しましょう。
+      </p>
+
+      <a href="#plan" class="inline-flex justify-center items-center gap-2 bg-white text-zinc-900 font-bold py-5 px-10 rounded-full text-lg shadow-xl hover:scale-105 active:scale-95 transition-all hover:bg-zinc-100">
+        今すぐプランを選ぶ
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/>
+        </svg>
+      </a>
+
+      <p class="text-xs text-zinc-500 mt-8">
+        ※ ご購入前に、端末のeSIM対応状況、SIMロック解除状況、データ通信専用であることをご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 bg-zinc-950 text-zinc-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-white font-extrabold">
+        <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-teal-400 flex items-center justify-center text-white">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 18.5h.01M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+          </svg>
+        </span>
+        Vietnam eSIM
+      </div>
+
+      <div class="text-sm">
+        © 2026 Vietnam eSIM. All rights reserved.
+      </div>
+
+      <div class="flex items-center gap-5 text-sm">
+        <a href="#" class="hover:text-white transition-colors">利用規約</a>
+        <a href="#" class="hover:text-white transition-colors">プライバシー</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
