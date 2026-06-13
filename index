@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ベトナム eSIM | 到着後すぐにつながる高速データ通信</title>
   <meta name="description" content="ベトナム旅行・出張に便利なeSIM。QRコードを読み込むだけで、到着後すぐに4G/5Gデータ通信が利用可能。SIMカードの差し替え不要、オンラインで簡単購入。" />
+
+  <link rel="canonical" href="https://try1-beta-nine.vercel.app/" />
+
+  <meta property="og:title" content="ベトナム eSIM | 到着後すぐにつながる高速データ通信" />
+  <meta property="og:description" content="ベトナム旅行・出張に便利なeSIM。QRコードを読み込むだけで、到着後すぐに4G/5Gデータ通信が利用可能。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://try1-beta-nine.vercel.app/" />
+  <meta property="og:site_name" content="Vietnam eSIM" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#2563eb" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -34,7 +46,7 @@
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
@@ -431,9 +443,11 @@
               日本語サポート
             </li>
           </ul>
-          <button class="w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+
+          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
+          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
             選択する
-          </button>
+          </a>
         </div>
 
         <div class="bg-zinc-900 rounded-3xl p-8 shadow-2xl relative transform md:-translate-y-4 border border-zinc-800">
@@ -474,9 +488,11 @@
               観光・出張どちらにも最適
             </li>
           </ul>
-          <button class="w-full py-4 px-6 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all hover:shadow-blue-500/25 active:scale-95">
+
+          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
+          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-md transition-all hover:shadow-blue-500/25 active:scale-95">
             このプランを選ぶ
-          </button>
+          </a>
         </div>
 
         <div class="bg-white rounded-3xl p-8 border border-zinc-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
@@ -508,9 +524,11 @@
               長めの滞在に安心
             </li>
           </ul>
-          <button class="w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
+
+          <!-- TODO: href を実際の購入リンク・LINE・WhatsApp・Stripe Payment Link に変更してください -->
+          <a href="#contact" class="block text-center w-full py-4 px-6 rounded-xl font-bold text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors">
             選択する
-          </button>
+          </a>
         </div>
       </div>
 
@@ -702,6 +720,35 @@
           </p>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact / Purchase placeholder -->
+  <section id="contact" class="py-24 px-6 bg-white border-t border-zinc-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-flex px-4 py-2 rounded-full bg-teal-50 text-teal-700 font-bold text-sm mb-4">
+        Contact
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-extrabold text-zinc-950 mb-6">
+        ご購入・お問い合わせ
+      </h2>
+      <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+        現在、購入リンクを準備中です。ご購入希望の方は、以下の連絡先または公式LINE・WhatsAppリンクを設定してください。
+      </p>
+
+      <!-- TODO: 実際のLINE / WhatsApp / 決済リンクに変更してください -->
+      <div class="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <a href="mailto:support@example.com?subject=Vietnam%20eSIM%20Purchase" class="inline-flex justify-center items-center bg-zinc-900 hover:bg-zinc-800 text-white font-bold py-4 px-6 rounded-2xl transition-all active:scale-95">
+          メールで問い合わせる
+        </a>
+        <a href="#plan" class="inline-flex justify-center items-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition-all active:scale-95">
+          プランに戻る
+        </a>
+      </div>
+
+      <p class="text-sm text-zinc-400 mt-6">
+        ※ support@example.com は仮のメールアドレスです。実際の連絡先に変更してください。
+      </p>
     </div>
   </section>
 
