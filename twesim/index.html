@@ -213,7 +213,7 @@
   }
   </script>
 </head>
-<body class="min-h-screen text-slate-900">
+<body class="min-h-screen pb-24 text-slate-900 lg:pb-0">
   <header class="relative overflow-hidden text-white">
     <div class="absolute inset-0 subtle-grid opacity-20"></div>
     <div class="absolute inset-0 bg-[linear-gradient(135deg,#0b1220_0%,#102a43_45%,#0f172a_100%)]"></div>
@@ -307,12 +307,15 @@
                   <div class="text-sm font-black text-white">選択中の推奨プラン</div>
                   <div class="text-xs font-black text-cyan-200">選択内容</div>
                 </div>
-                <div class="mt-2 text-3xl font-black text-white" id="selectedPlanName">5日プラン</div>
+                <div class="mt-2 text-3xl font-black text-white" id="selectedPlanName">5G 1GB/日 5日</div>
                 <div class="mt-1 text-sm text-slate-300" id="selectedPlanDesc">3泊4日の台湾旅行におすすめ。</div>
                 <div class="mt-4 flex items-center justify-between rounded-2xl bg-white/6 px-4 py-3 ring-1 ring-white/10">
                   <span class="text-sm font-bold text-slate-200">表示価格</span>
                   <span class="text-2xl font-black text-white" id="selectedPlanPrice">¥880</span>
                 </div>
+                <a id="buyButton" href="https://easygosim.com/cart/48801350385819:1" class="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-cyan-400 px-5 py-3.5 font-black text-slate-950 hover:bg-cyan-300">
+                  <i data-lucide="shopping-cart" class="h-5 w-5"></i>このプランを購入する
+                </a>
               </div>
             </div>
           </div>
@@ -747,15 +750,15 @@
     </div>
   </footer>
 
-  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(15,23,42,0.08)]">
-    <div class="flex items-center gap-3">
+  <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(15,23,42,0.08)]">
+    <div class="mx-auto flex max-w-3xl items-center gap-3">
       <div class="min-w-0 flex-1">
         <div class="text-xs font-black text-cyan-700">おすすめ</div>
         <div class="truncate text-sm font-black text-slate-950" id="mobilePlanName">5G 1GB/日 5日</div>
         <div class="text-xs text-slate-500" id="mobilePlanPrice">¥880</div>
       </div>
-      <a href="#plans" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white">
-        プランを見る
+      <a id="mobileBuyButton" href="https://easygosim.com/cart/48801350385819:1" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white">
+        購入する
       </a>
       <a href="#contact" class="rounded-2xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950">
         LINE
@@ -771,6 +774,25 @@
       const selectedPlanPrice = document.getElementById('selectedPlanPrice');
       const mobilePlanName = document.getElementById('mobilePlanName');
       const mobilePlanPrice = document.getElementById('mobilePlanPrice');
+      const buyButton = document.getElementById('buyButton');
+      const mobileBuyButton = document.getElementById('mobileBuyButton');
+      const variantIds = {
+        '5G 1GB/日 3日': '48801350353051',
+        '5G 1GB/日 5日': '48801350385819',
+        '5G 1GB/日 7日': '48801350418587',
+        '5G 1GB/日 10日': '48801350451355',
+        '5G 1GB/日 15日': '48801350484123',
+        '5G 1GB/日 30日': '48801350516891',
+        '4G無制限 3日': '48801350549659',
+        '4G無制限 5日': '48801350582427',
+        '4G無制限 7日': '48801350615195',
+        '4G無制限 10日': '48801350647963',
+        '4G無制限 15日': '48801350680731',
+        '5G無制限 3日': '48801350713499',
+        '5G無制限 5日': '48801350746267',
+        '5G無制限 7日': '48801350779035',
+        '5G無制限 10日': '48801350811803'
+      };
 
       function selectCard(card, trackSelection) {
         cards.forEach((el) => el.classList.remove('ring-2', 'ring-cyan-300'));
@@ -783,6 +805,10 @@
         selectedPlanDesc.textContent = desc;
         mobilePlanName.textContent = name;
         mobilePlanPrice.textContent = price;
+        const variantId = variantIds[name];
+        const cartUrl = variantId ? `https://easygosim.com/cart/${variantId}:1` : '#plans';
+        buyButton.href = cartUrl;
+        mobileBuyButton.href = cartUrl;
         if (trackSelection && typeof gtag === 'function') {
           gtag('event', 'select_item', {
             item_list_name: 'Taiwan eSIM plans',
@@ -797,6 +823,20 @@
 
       const initial = document.querySelector('.plan-card[data-name="5G 1GB/日 5日"]') || cards[0];
       if (initial) selectCard(initial, false);
+
+      [buyButton, mobileBuyButton].forEach((button) => {
+        button.addEventListener('click', () => {
+          const name = mobilePlanName.textContent || '';
+          const price = Number((mobilePlanPrice.textContent || '').replace(/[^0-9]/g, ''));
+          if (typeof gtag === 'function') {
+            gtag('event', 'add_to_cart', {
+              currency: 'JPY',
+              value: price,
+              items: [{ item_id: variantIds[name] || '', item_name: name, price, quantity: 1 }]
+            });
+          }
+        });
+      });
 
       document.querySelectorAll('a[href*="line.me"]').forEach((link) => {
         link.addEventListener('click', () => {
