@@ -6,15 +6,15 @@
 
   <title>台湾eSIM おすすめ｜中華電信・パスポート登録不要｜EasyGoSIM</title>
   <meta name="description" content="日本人の台湾旅行向けeSIM。中華電信回線、パスポート登録不要。3日・5日・7日・10日を中心に、台北・台中・台南・高雄の短期旅行でも選びやすい日本円プランです。" />
-  <link rel="canonical" href="https://hk.easygosim.us/taiwan_esim.html" />
+  <link rel="canonical" href="https://esim.easygosim.com/twesim" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-  <link rel="alternate" hreflang="ja" href="https://hk.easygosim.us/taiwan_esim.html" />
-  <link rel="alternate" hreflang="x-default" href="https://hk.easygosim.us/taiwan_esim.html" />
+  <link rel="alternate" hreflang="ja" href="https://esim.easygosim.com/twesim" />
+  <link rel="alternate" hreflang="x-default" href="https://esim.easygosim.com/twesim" />
 
   <meta property="og:title" content="台湾eSIM｜中華電信・パスポート登録不要" />
   <meta property="og:description" content="日本人の台湾旅行に。中華電信回線、パスポート登録不要。3日・5日・7日の短期プランを日本円で比較できます。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hk.easygosim.us/taiwan_esim.html" />
+  <meta property="og:url" content="https://esim.easygosim.com/twesim" />
   <meta property="og:site_name" content="EasyGoSIM" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -85,6 +85,27 @@
       border: 1px solid rgba(148, 163, 184, 0.20);
       box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
     }
+
+    @media (max-width: 639px) {
+      #plans .space-y-8 > div > .mt-4.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .plan-card {
+        min-height: 118px;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      .plan-card p { display: none; }
+
+      .plan-card .text-3xl {
+        margin-top: 0.75rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -93,7 +114,7 @@
     "@type": "Product",
     "name": "台湾eSIM 中華電信 日本人旅行者向け",
     "description": "中華電信回線を利用する日本人の台湾旅行向けeSIM。パスポート登録不要で、3日・5日・7日・10日の短期旅行に対応。",
-    "url": "https://hk.easygosim.us/taiwan_esim.html",
+    "url": "https://esim.easygosim.com/twesim",
     "category": "Travel eSIM",
     "brand": { "@type": "Brand", "name": "EasyGoSIM" },
     "offers": [
@@ -249,7 +270,7 @@
           </div>
         </div>
 
-        <div class="animate-fade-up delay-200">
+        <div class="hidden lg:block animate-fade-up delay-200">
           <div class="relative mx-auto max-w-xl">
             <div class="absolute -inset-1 rounded-[2rem] bg-[linear-gradient(135deg,rgba(34,211,238,0.28),rgba(59,130,246,0.22),rgba(244,114,182,0.18))] blur-xl"></div>
             <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/85 p-5 shadow-2xl">
@@ -284,10 +305,10 @@
               <div class="mt-5 rounded-2xl border border-white/10 bg-slate-900 p-4">
                 <div class="flex items-center justify-between">
                   <div class="text-sm font-black text-white">選択中の推奨プラン</div>
-                  <div class="text-xs font-black text-cyan-200">自動更新</div>
+                  <div class="text-xs font-black text-cyan-200">選択内容</div>
                 </div>
                 <div class="mt-2 text-3xl font-black text-white" id="selectedPlanName">5日プラン</div>
-                <div class="mt-1 text-sm text-slate-300" id="selectedPlanDesc">短期旅行の入口として選びやすい価格帯。</div>
+                <div class="mt-1 text-sm text-slate-300" id="selectedPlanDesc">3泊4日の台湾旅行におすすめ。</div>
                 <div class="mt-4 flex items-center justify-between rounded-2xl bg-white/6 px-4 py-3 ring-1 ring-white/10">
                   <span class="text-sm font-bold text-slate-200">表示価格</span>
                   <span class="text-2xl font-black text-white" id="selectedPlanPrice">¥880</span>
@@ -307,7 +328,7 @@
           <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <div>
               <div class="text-sm font-black text-cyan-700">おすすめプラン</div>
-              <h2 class="mt-2 text-2xl sm:text-3xl font-black text-slate-950">短期旅行から順番に見せる、売りやすい構成</h2>
+              <h2 class="mt-2 text-2xl sm:text-3xl font-black text-slate-950">旅行スタイルに合わせて選べる3つのプラン</h2>
               <p class="mt-3 max-w-3xl text-slate-600 leading-7">
                 3日・5日・7日の短期プランを中心に、5G 1GB/日、4G無制限、5G無制限から使い方に合わせて選べます。
               </p>
@@ -327,7 +348,7 @@
               <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G 1GB/日 3日" data-price="¥580" data-desc="最短の旅行向け。まず試したい人に。">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-black rounded-full bg-slate-100 px-3 py-1 text-slate-700">入口</span>
+                    <span class="text-xs font-black rounded-full bg-slate-100 px-3 py-1 text-slate-700">短期</span>
                     <span class="text-xs font-black text-cyan-700">3日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black text-slate-950">¥580</div>
@@ -340,7 +361,7 @@
                     <span class="text-xs font-black text-cyan-700">5日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black text-slate-950">¥880</div>
-                  <p class="mt-3 text-sm leading-6 text-slate-600">日本人旅行者の短期滞在に最も置きやすい価格帯。</p>
+                  <p class="mt-3 text-sm leading-6 text-slate-600">3泊4日の台湾旅行にも合わせやすい人気プラン。</p>
                 </button>
 
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G 1GB/日 7日" data-price="¥1,180" data-desc="少し余裕のある日程にちょうどいい。">
@@ -363,11 +384,11 @@
 
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G 1GB/日 15日" data-price="¥2,280" data-desc="中期滞在向けプラン。">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-black rounded-full bg-slate-100 px-3 py-1 text-slate-700">上位</span>
+                    <span class="text-xs font-black rounded-full bg-slate-100 px-3 py-1 text-slate-700">中長期</span>
                     <span class="text-xs font-black text-cyan-700">15日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black text-slate-950">¥2,280</div>
-                  <p class="mt-3 text-sm leading-6 text-slate-600">旅先での連絡や地図利用が多い人に向く価格帯。</p>
+                  <p class="mt-3 text-sm leading-6 text-slate-600">旅先での連絡や地図利用が多い方におすすめ。</p>
                 </button>
 
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G 1GB/日 30日" data-price="¥3,980" data-desc="長期滞在・仕事兼旅行にも対応しやすい。">
@@ -384,12 +405,12 @@
             <div>
               <div class="flex items-center justify-between gap-3">
                 <h3 class="text-lg sm:text-xl font-black text-slate-950">4G無制限プラン</h3>
-                <span class="text-xs font-black rounded-full bg-amber-400 text-slate-950 px-3 py-1">利益重視</span>
+                <span class="text-xs font-black rounded-full bg-amber-400 text-slate-950 px-3 py-1">データ無制限</span>
               </div>
               <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 <button class="plan-card text-left rounded-3xl bg-slate-950 p-5 text-white card hover:-translate-y-0.5 transition" data-name="4G無制限 3日" data-price="¥1,980" data-desc="短期旅行でも動画やSNSをたっぷり使う方向け。">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-black rounded-full bg-white/10 px-3 py-1 text-cyan-200">高利益</span>
+                    <span class="text-xs font-black rounded-full bg-white/10 px-3 py-1 text-cyan-200">無制限</span>
                     <span class="text-xs font-black text-cyan-200">3日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black">¥1,980</div>
@@ -416,7 +437,7 @@
 
                 <button class="plan-card text-left rounded-3xl bg-slate-950 p-5 text-white card hover:-translate-y-0.5 transition" data-name="4G無制限 10日" data-price="¥5,480" data-desc="中期滞在でもデータ量を気にせず使えます。">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-black rounded-full bg-white/10 px-3 py-1 text-cyan-200">上位</span>
+                    <span class="text-xs font-black rounded-full bg-white/10 px-3 py-1 text-cyan-200">ゆとり</span>
                     <span class="text-xs font-black text-cyan-200">10日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black">¥5,480</div>
@@ -455,7 +476,7 @@
                     <span class="text-xs font-black text-cyan-700">5日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black text-slate-950">¥6,680</div>
-                  <p class="mt-3 text-sm leading-6 text-slate-600">旅行日数が少し伸びる人に提案しやすい。</p>
+                  <p class="mt-3 text-sm leading-6 text-slate-600">高速通信をたっぷり使いたい5日間の旅行に。</p>
                 </button>
 
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G無制限 7日" data-price="¥8,880" data-desc="長めの旅程にも使いやすい。">
@@ -469,7 +490,7 @@
 
                 <button class="plan-card text-left rounded-3xl bg-white p-5 card hover:-translate-y-0.5 transition" data-name="5G無制限 10日" data-price="¥12,480" data-desc="仕事や動画にも使いやすい10日間プラン。">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-black rounded-full bg-emerald-50 px-3 py-1 text-emerald-700">最上位</span>
+                    <span class="text-xs font-black rounded-full bg-emerald-50 px-3 py-1 text-emerald-700">長期</span>
                     <span class="text-xs font-black text-cyan-700">10日</span>
                   </div>
                   <div class="mt-4 text-3xl font-black text-slate-950">¥12,480</div>
@@ -503,7 +524,7 @@
           <div class="rounded-[1.75rem] bg-white p-6 card">
             <div class="text-sm font-black text-cyan-700">4</div>
             <h3 class="mt-3 text-xl font-black">LINEで相談しやすい</h3>
-            <p class="mt-3 text-sm leading-7 text-slate-600">日数選びに迷う人をそのまま逃がさない、相談導線を残しています。</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">日数やデータ量で迷ったときは、日本語で気軽に相談できます。</p>
           </div>
         </div>
       </div>
@@ -649,8 +670,8 @@
 
             <div class="subtle-grid p-6 sm:p-10 bg-[linear-gradient(135deg,#0ea5e9_0%,#0f172a_55%,#111827_100%)]">
               <div class="rounded-[2rem] bg-white/10 p-5 ring-1 ring-white/10">
-                <div class="text-xs font-black text-cyan-100">会話の入口</div>
-                <div class="mt-3 text-2xl font-black">3つだけ確認すれば十分</div>
+                <div class="text-xs font-black text-cyan-100">ご相談前の確認</div>
+                <div class="mt-3 text-2xl font-black">次の3点をお知らせください</div>
                 <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-200">
                   <li>・旅行の日数</li>
                   <li>・データの使い方</li>
@@ -702,7 +723,7 @@
             <p class="mt-3 text-sm leading-7 text-slate-600">いいえ、このeSIMの購入・利用にパスポート登録は必要ありません。</p>
           </details>
           <details class="rounded-[1.5rem] bg-white p-5 card">
-            <summary class="cursor-pointer list-none text-lg font-black">料金は日元で表示していますか？</summary>
+            <summary class="cursor-pointer list-none text-lg font-black">料金は日本円で表示していますか？</summary>
             <p class="mt-3 text-sm leading-7 text-slate-600">はい。このページの料金はすべて日本円で表示しています。</p>
           </details>
           <details class="rounded-[1.5rem] bg-white p-5 card">
