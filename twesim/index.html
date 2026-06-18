@@ -817,8 +817,26 @@
         }
       }
 
+      function trackAddToCart(name, price) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'add_to_cart', {
+            currency: 'JPY',
+            value: price,
+            items: [{ item_id: variantIds[name] || '', item_name: name, price, quantity: 1 }]
+          });
+        }
+      }
+
       cards.forEach((card) => {
-        card.addEventListener('click', () => selectCard(card, true));
+        card.addEventListener('click', () => {
+          selectCard(card, true);
+          const name = card.getAttribute('data-name') || '';
+          const price = Number((card.getAttribute('data-price') || '').replace(/[^0-9]/g, ''));
+          const variantId = variantIds[name];
+          if (!variantId) return;
+          trackAddToCart(name, price);
+          window.location.href = `https://easygosim.com/cart/${variantId}:1`;
+        });
       });
 
       const initial = document.querySelector('.plan-card[data-name="5G 1GB/日 5日"]') || cards[0];
@@ -828,13 +846,7 @@
         button.addEventListener('click', () => {
           const name = mobilePlanName.textContent || '';
           const price = Number((mobilePlanPrice.textContent || '').replace(/[^0-9]/g, ''));
-          if (typeof gtag === 'function') {
-            gtag('event', 'add_to_cart', {
-              currency: 'JPY',
-              value: price,
-              items: [{ item_id: variantIds[name] || '', item_name: name, price, quantity: 1 }]
-            });
-          }
+          trackAddToCart(name, price);
         });
       });
 
