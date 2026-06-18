@@ -284,37 +284,18 @@
                 </div>
               </div>
 
-              <div class="mt-5 grid gap-4 sm:grid-cols-3">
-                <div class="rounded-2xl bg-white/6 p-4 ring-1 ring-white/8">
-                  <div class="text-xs font-black text-cyan-200">5日</div>
-                  <div class="mt-1 text-2xl font-black">¥880</div>
-                  <div class="mt-2 text-xs leading-5 text-slate-300">週末旅行や3泊4日に選びやすいプラン。</div>
-                </div>
-                <div class="rounded-2xl bg-white/6 p-4 ring-1 ring-white/8">
-                  <div class="text-xs font-black text-cyan-200">7日</div>
-                  <div class="mt-1 text-2xl font-black">¥1,180</div>
-                  <div class="mt-2 text-xs leading-5 text-slate-300">少し余裕のある旅程におすすめ。</div>
-                </div>
-                <div class="rounded-2xl bg-cyan-400 p-4 text-slate-950 shadow-lg shadow-cyan-500/20">
-                  <div class="text-xs font-black">4G無制限</div>
-                  <div class="mt-1 text-2xl font-black">¥1,980</div>
-                  <div class="mt-2 text-xs leading-5 font-semibold">動画やSNSをたっぷり使う方向け。</div>
-                </div>
-              </div>
-
-              <div class="mt-5 rounded-2xl border border-white/10 bg-slate-900 p-4">
-                <div class="flex items-center justify-between">
-                  <div class="text-sm font-black text-white">選択中の推奨プラン</div>
-                  <div class="text-xs font-black text-cyan-200">選択内容</div>
-                </div>
-                <div class="mt-2 text-3xl font-black text-white" id="selectedPlanName">5G 1GB/日 5日</div>
-                <div class="mt-1 text-sm text-slate-300" id="selectedPlanDesc">3泊4日の台湾旅行におすすめ。</div>
-                <div class="mt-4 flex items-center justify-between rounded-2xl bg-white/6 px-4 py-3 ring-1 ring-white/10">
-                  <span class="text-sm font-bold text-slate-200">表示価格</span>
-                  <span class="text-2xl font-black text-white" id="selectedPlanPrice">¥880</span>
-                </div>
-                <a id="buyButton" href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart" class="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-cyan-400 px-5 py-3.5 font-black text-slate-950 hover:bg-cyan-300">
-                  <i data-lucide="shopping-cart" class="h-5 w-5"></i>このプランを購入する
+              <div class="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] divide-y divide-white/10">
+                <a href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart" data-name="5G 1GB/日 5日" data-price="¥880" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
+                  <span><small class="block font-black text-cyan-200">短期旅行に人気</small><strong class="mt-1 block text-lg">5G 1GB/日・5日</strong></span>
+                  <span class="shrink-0 text-right"><strong class="block text-2xl">¥880</strong><small class="font-black text-cyan-200">カートへ →</small></span>
+                </a>
+                <a href="https://easygosim.com/cart/add?id=48801350418587&amp;quantity=1&amp;return_to=/cart" data-name="5G 1GB/日 7日" data-price="¥1,180" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
+                  <span><small class="block font-black text-cyan-200">余裕のある日程に</small><strong class="mt-1 block text-lg">5G 1GB/日・7日</strong></span>
+                  <span class="shrink-0 text-right"><strong class="block text-2xl">¥1,180</strong><small class="font-black text-cyan-200">カートへ →</small></span>
+                </a>
+                <a href="https://easygosim.com/cart/add?id=48801350549659&amp;quantity=1&amp;return_to=/cart" data-name="4G無制限 3日" data-price="¥1,980" class="quick-buy-link flex items-center justify-between gap-4 bg-cyan-400 p-4 text-slate-950 hover:bg-cyan-300 active:bg-cyan-200 transition-colors">
+                  <span><small class="block font-black">データ量を気にせず使える</small><strong class="mt-1 block text-lg">4G無制限・3日</strong></span>
+                  <span class="shrink-0 text-right"><strong class="block text-2xl">¥1,980</strong><small class="font-black">カートへ →</small></span>
                 </a>
               </div>
             </div>
@@ -769,12 +750,8 @@
   <script>
     (function () {
       const cards = document.querySelectorAll('.plan-card');
-      const selectedPlanName = document.getElementById('selectedPlanName');
-      const selectedPlanDesc = document.getElementById('selectedPlanDesc');
-      const selectedPlanPrice = document.getElementById('selectedPlanPrice');
       const mobilePlanName = document.getElementById('mobilePlanName');
       const mobilePlanPrice = document.getElementById('mobilePlanPrice');
-      const buyButton = document.getElementById('buyButton');
       const mobileBuyButton = document.getElementById('mobileBuyButton');
       const variantIds = {
         '5G 1GB/日 3日': '48801350353051',
@@ -799,15 +776,10 @@
         card.classList.add('ring-2', 'ring-cyan-300');
         const name = card.getAttribute('data-name') || '';
         const price = card.getAttribute('data-price') || '';
-        const desc = card.getAttribute('data-desc') || '';
-        selectedPlanName.textContent = name;
-        selectedPlanPrice.textContent = price;
-        selectedPlanDesc.textContent = desc;
         mobilePlanName.textContent = name;
         mobilePlanPrice.textContent = price;
         const variantId = variantIds[name];
         const cartUrl = variantId ? `https://easygosim.com/cart/add?id=${variantId}&quantity=1&return_to=/cart` : '#plans';
-        buyButton.href = cartUrl;
         mobileBuyButton.href = cartUrl;
         if (trackSelection && typeof gtag === 'function') {
           gtag('event', 'select_item', {
@@ -842,10 +814,18 @@
       const initial = document.querySelector('.plan-card[data-name="5G 1GB/日 5日"]') || cards[0];
       if (initial) selectCard(initial, false);
 
-      [buyButton, mobileBuyButton].forEach((button) => {
+      [mobileBuyButton].forEach((button) => {
         button.addEventListener('click', () => {
           const name = mobilePlanName.textContent || '';
           const price = Number((mobilePlanPrice.textContent || '').replace(/[^0-9]/g, ''));
+          trackAddToCart(name, price);
+        });
+      });
+
+      document.querySelectorAll('.quick-buy-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          const name = link.getAttribute('data-name') || '';
+          const price = Number((link.getAttribute('data-price') || '').replace(/[^0-9]/g, ''));
           trackAddToCart(name, price);
         });
       });
