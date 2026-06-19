@@ -1671,6 +1671,10 @@
       });
 
       document.querySelectorAll('a[href*="/cart/add"]').forEach(function (link) {
+        const localizedCartUrl = new URL(link.href);
+        localizedCartUrl.searchParams.set('locale', 'ja');
+        link.href = localizedCartUrl.toString();
+
         link.addEventListener('click', function () {
           if (typeof gtag !== 'function') return;
           const variantId = new URL(link.href).searchParams.get('id');
