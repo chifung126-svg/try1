@@ -26,7 +26,11 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-JL0CSDTY8D', { cookie_domain: 'easygosim.us' });
+    gtag('config', 'G-JL0CSDTY8D', {
+      cookie_domain: 'easygosim.com',
+      linker: { domains: ['esim.easygosim.com', 'easygosim.com'] }
+    });
+    gtag('config', 'AW-666877102');
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -285,15 +289,15 @@
               </div>
 
               <div class="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] divide-y divide-white/10">
-                <a href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart" data-name="5G 1GB/日 5日" data-price="¥880" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
+                <a href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart&amp;locale=ja" data-name="5G 1GB/日 5日" data-price="¥880" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
                   <span><small class="block font-black text-cyan-200">短期旅行に人気</small><strong class="mt-1 block text-lg">5G 1GB/日・5日</strong></span>
                   <span class="shrink-0 text-right"><strong class="block text-2xl">¥880</strong><small class="font-black text-cyan-200">カートへ →</small></span>
                 </a>
-                <a href="https://easygosim.com/cart/add?id=48801350418587&amp;quantity=1&amp;return_to=/cart" data-name="5G 1GB/日 7日" data-price="¥1,180" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
+                <a href="https://easygosim.com/cart/add?id=48801350418587&amp;quantity=1&amp;return_to=/cart&amp;locale=ja" data-name="5G 1GB/日 7日" data-price="¥1,180" class="quick-buy-link flex items-center justify-between gap-4 p-4 hover:bg-white/10 active:bg-white/15 transition-colors">
                   <span><small class="block font-black text-cyan-200">余裕のある日程に</small><strong class="mt-1 block text-lg">5G 1GB/日・7日</strong></span>
                   <span class="shrink-0 text-right"><strong class="block text-2xl">¥1,180</strong><small class="font-black text-cyan-200">カートへ →</small></span>
                 </a>
-                <a href="https://easygosim.com/cart/add?id=48801350549659&amp;quantity=1&amp;return_to=/cart" data-name="4G無制限 3日" data-price="¥1,980" class="quick-buy-link flex items-center justify-between gap-4 bg-cyan-400 p-4 text-slate-950 hover:bg-cyan-300 active:bg-cyan-200 transition-colors">
+                <a href="https://easygosim.com/cart/add?id=48801350549659&amp;quantity=1&amp;return_to=/cart&amp;locale=ja" data-name="4G無制限 3日" data-price="¥1,980" class="quick-buy-link flex items-center justify-between gap-4 bg-cyan-400 p-4 text-slate-950 hover:bg-cyan-300 active:bg-cyan-200 transition-colors">
                   <span><small class="block font-black">データ量を気にせず使える</small><strong class="mt-1 block text-lg">4G無制限・3日</strong></span>
                   <span class="shrink-0 text-right"><strong class="block text-2xl">¥1,980</strong><small class="font-black">カートへ →</small></span>
                 </a>
@@ -738,7 +742,7 @@
         <div class="truncate text-sm font-black text-slate-950" id="mobilePlanName">5G 1GB/日 5日</div>
         <div class="text-xs text-slate-500" id="mobilePlanPrice">¥880</div>
       </div>
-      <a id="mobileBuyButton" href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white">
+      <a id="mobileBuyButton" href="https://easygosim.com/cart/add?id=48801350385819&amp;quantity=1&amp;return_to=/cart&amp;locale=ja" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-black text-white">
         購入する
       </a>
       <a href="#contact" class="rounded-2xl bg-cyan-400 px-4 py-3 text-sm font-black text-slate-950">
@@ -779,7 +783,7 @@
         mobilePlanName.textContent = name;
         mobilePlanPrice.textContent = price;
         const variantId = variantIds[name];
-        const cartUrl = variantId ? `https://easygosim.com/cart/add?id=${variantId}&quantity=1&return_to=/cart` : '#plans';
+        const cartUrl = variantId ? `https://easygosim.com/cart/add?id=${variantId}&quantity=1&return_to=/cart&locale=ja` : '#plans';
         mobileBuyButton.href = cartUrl;
         if (trackSelection && typeof gtag === 'function') {
           gtag('event', 'select_item', {
@@ -789,14 +793,29 @@
         }
       }
 
-      function trackAddToCart(name, price) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'add_to_cart', {
-            currency: 'JPY',
-            value: price,
-            items: [{ item_id: variantIds[name] || '', item_name: name, price, quantity: 1 }]
-          });
+      function trackAddToCart(name, price, destination) {
+        if (typeof gtag !== 'function') {
+          if (destination) window.location.href = destination;
+          return;
         }
+
+        let navigated = false;
+        const finishNavigation = () => {
+          if (!destination || navigated) return;
+          navigated = true;
+          window.location.href = destination;
+        };
+
+        gtag('event', 'add_to_cart', {
+          currency: 'JPY',
+          value: price,
+          transport_type: 'beacon',
+          event_callback: finishNavigation,
+          event_timeout: 700,
+          items: [{ item_id: variantIds[name] || '', item_name: name, price, quantity: 1 }]
+        });
+
+        if (destination) window.setTimeout(finishNavigation, 750);
       }
 
       cards.forEach((card) => {
@@ -806,8 +825,7 @@
           const price = Number((card.getAttribute('data-price') || '').replace(/[^0-9]/g, ''));
           const variantId = variantIds[name];
           if (!variantId) return;
-          trackAddToCart(name, price);
-          window.location.href = `https://easygosim.com/cart/add?id=${variantId}&quantity=1&return_to=/cart`;
+          trackAddToCart(name, price, `https://easygosim.com/cart/add?id=${variantId}&quantity=1&return_to=/cart&locale=ja`);
         });
       });
 
@@ -815,18 +833,20 @@
       if (initial) selectCard(initial, false);
 
       [mobileBuyButton].forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
           const name = mobilePlanName.textContent || '';
           const price = Number((mobilePlanPrice.textContent || '').replace(/[^0-9]/g, ''));
-          trackAddToCart(name, price);
+          trackAddToCart(name, price, button.href);
         });
       });
 
       document.querySelectorAll('.quick-buy-link').forEach((link) => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
           const name = link.getAttribute('data-name') || '';
           const price = Number((link.getAttribute('data-price') || '').replace(/[^0-9]/g, ''));
-          trackAddToCart(name, price);
+          trackAddToCart(name, price, link.href);
         });
       });
 
