@@ -1,0 +1,104 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const jpCatalog = JSON.parse(fs.readFileSync(path.join(__dirname, 'jp-products.json'), 'utf8'));
+const { createJapanOrder, createJapanPaymentLink, listJapanSkus } = require('./api/_lib/jp-backend');
+
+const root = __dirname;
+const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.svg':'image/svg+xml', '.json':'application/json; charset=utf-8', '.txt':'text/plain; charset=utf-8' };
+
+function route(requestPath) {
+  const clean = requestPath.split('?')[0].replace(/\\/g, '/');
+  if (clean === '/blogs/news/2' || clean === '/blogs/news/2/') return '/blogs/news/2/index.html';
+  if (clean.startsWith('/products/')) return '/index.html';
+  if (clean === '/korea-esim' || clean === '/korea-esim/') return '/korea-esim.html';
+  if (clean === '/malaysia-esim-guide' || clean === '/malaysia-esim-guide/') return '/malaysia-esim-guide.html';
+  if (clean === '/checkout' || clean === '/checkout/') return '/checkout.html';
+  if (clean === '/jpesim-checkout' || clean === '/jpesim-checkout/') return '/jpesim-checkout.html';
+  if (clean === '/jpesim-thank-you' || clean === '/jpesim-thank-you/') return '/jpesim-thank-you.html';
+  return clean === '/' ? '/index.html' : clean;
+}
+
+function readJsonBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk;
+      if (body.length > 10000) reject(new Error('Request body too large'));
+    });
+    req.on('end', () => {
+      try { resolve(body ? JSON.parse(body) : {}); } catch { reject(new Error('Invalid JSON')); }
+    });
+    req.on('error', reject);
+  });
+}
+
+function findJapanProduct(sku) {
+  return Object.values(jpCatalog.products).flat().find(product => product.sku === sku);
+}
+
+async function handleApi(req, res, pathname) {
+  if (req.method === 'GET' && pathname === '/api/jp/catalog') {
+    try {
+      return sendJson(res, 200, { market: 'JP', locale: 'ja-JP', currency: 'JPY', paymentMethodTypes: ['card'], products: await listJapanSkus() });
+    } catch {
+      return sendJson(res, 200, jpCatalog);
+    }
+  }
+  if (req.method === 'POST' && pathname === '/api/jp/create-checkout') {
+    try {
+      const body = await readJsonBody(req);
+      const created = await createJapanOrder(body);
+      return sendJson(res, 201, await createJapanPaymentLink({ ...created, customerEmail: body.customerEmail }));
+    } catch (error) {
+      return sendJson(res, error.status || 500, { error: error.message || 'Unable to create checkout' });
+    }
+  }
+  if (req.method === 'POST' && pathname === '/api/jp/order-draft') {
+    try {
+      const body = await readJsonBody(req);
+      const product = findJapanProduct(body.sku);
+      if (!product) return sendJson(res, 400, { error: 'Unknown Japan product SKU' });
+      const orderId = 'JP-' + crypto.randomBytes(6).toString('hex').toUpperCase();
+      return sendJson(res, 201, {
+        orderId,
+        market: 'jp',
+        locale: 'ja-JP',
+        currency: jpCatalog.currency,
+        paymentMethodTypes: jpCatalog.paymentMethodTypes,
+        product,
+        paymentStatus: 'not_configured',
+        message: 'Airwallex credentials are required before a live checkout can be created.'
+      });
+    } catch (error) {
+      return sendJson(res, 400, { error: error.message });
+    }
+  }
+  return false;
+}
+
+function sendJson(res, status, payload) {
+  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+  res.end(JSON.stringify(payload));
+  return true;
+}
+
+const server = http.createServer((req, res) => {
+  const pathname = (req.url || '/').split('?')[0];
+  if (pathname.startsWith('/api/')) {
+    handleApi(req, res, pathname).catch(error => sendJson(res, 500, { error: 'Internal server error' }));
+    return;
+  }
+  let urlPath;
+  try { urlPath = decodeURIComponent(route(req.url || '/')); } catch { res.writeHead(400); return res.end('Bad request'); }
+  const file = path.resolve(root, '.' + urlPath);
+  if (!file.startsWith(root + path.sep) && file !== root) { res.writeHead(403); return res.end('Forbidden'); }
+  fs.stat(file, (error, stat) => {
+    if (error || !stat.isFile()) { res.writeHead(404, {'Content-Type':'text/plain; charset=utf-8'}); return res.end('Not found'); }
+    res.writeHead(200, {'Content-Type': mime[path.extname(file).toLowerCase()] || 'application/octet-stream'});
+    fs.createReadStream(file).pipe(res);
+  });
+});
+
+server.listen(process.env.PORT || 3000, '0.0.0.0', () => console.log('EasyGoSim Japan server is ready'));
