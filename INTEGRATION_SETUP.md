@@ -1,6 +1,6 @@
 # Japan checkout integration
 
-The Japan route uses the same Supabase project and Airwallex account as the Hong Kong route, but it is isolated by `country_code=KR`, `currency=JPY`, and `market=JP` metadata.
+The Japan route uses the same Supabase project and the existing Rainway checkout flow as the Hong Kong route, but it is isolated by `country_code=KR`, `currency=JPY`, and `market=JP` metadata.
 
 ## Vercel environment variables
 
@@ -19,6 +19,10 @@ PUBLIC_JP_CANCEL_URL=https://esim.easygosim.com/korea-esim.html
 JP_WEBHOOK_TOLERANCE_MS=300000
 ```
 
+## Rainway checkout
+
+The browser must redirect to Rainway, not directly to Airwallex. The Rainway adapter is intentionally blocked until the real Rainway checkout endpoint and authentication contract are supplied.
+
 ## Airwallex webhook
 
 Configure the Japan/shared webhook endpoint as:
@@ -27,7 +31,7 @@ Configure the Japan/shared webhook endpoint as:
 https://esim.easygosim.com/api/airwallex/webhook
 ```
 
-Use the matching webhook secret for that endpoint and subscribe to the payment success/failure events used by the Airwallex account. The handler verifies `x-timestamp` + raw body with HMAC-SHA256, then only updates JPY/Korea orders carrying `market=JP` metadata.
+Use the matching webhook secret for that endpoint only if Rainway forwards Airwallex events to this endpoint. The handler verifies `x-timestamp` + raw body with HMAC-SHA256, then only updates JPY/Korea orders carrying `market=JP` metadata.
 
 ## Remaining prerequisite
 

@@ -15,7 +15,7 @@
     status.textContent = '安全な決済ページを準備しています…';
     status.classList.add('is-visible');
     try {
-      var response = await fetch('/api/jp/create-checkout', {
+      var response = await fetch('/api/jp/rainway-checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sku: sku, quantity: quantity })
