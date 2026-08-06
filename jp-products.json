@@ -1,0 +1,34 @@
+{
+  "currency": "JPY",
+  "countryCode": "JP",
+  "paymentMethodTypes": ["card"],
+  "products": {
+    "daily": [
+      {"sku":"eSIM-KR2G-01","plan":"1日間 2GB","price":500},
+      {"sku":"eSIM-KR2G-03","plan":"3日間 2GB","price":980},
+      {"sku":"eSIM-KR2G-05","plan":"5日間 2GB","price":1280},
+      {"sku":"eSIM-KR2G-07","plan":"7日間 2GB","price":1580},
+      {"sku":"eSIM-KR2G-10","plan":"10日間 2GB","price":2180},
+      {"sku":"eSIM-KR2G-15","plan":"15日間 2GB","price":2980},
+      {"sku":"eSIM-KR2G-20","plan":"20日間 2GB","price":3780},
+      {"sku":"eSIM-KR2G-30","plan":"30日間 2GB","price":4980}
+    ],
+    "unlimited": [
+      {"sku":"eSIM-SKTUL-01","plan":"1日間 無制限","price":700},
+      {"sku":"eSIM-SKTUL-02","plan":"2日間 無制限","price":1050},
+      {"sku":"eSIM-SKTUL-03","plan":"3日間 無制限","price":1450},
+      {"sku":"eSIM-SKTUL-04","plan":"4日間 無制限","price":1750},
+      {"sku":"eSIM-SKTUL-05","plan":"5日間 無制限","price":2050},
+      {"sku":"eSIM-SKTUL-06","plan":"6日間 無制限","price":2450},
+      {"sku":"eSIM-SKTUL-07","plan":"7日間 無制限","price":2680},
+      {"sku":"eSIM-SKTUL-08","plan":"8日間 無制限","price":2980},
+      {"sku":"eSIM-SKTUL-09","plan":"9日間 無制限","price":3180},
+      {"sku":"eSIM-SKTUL-10","plan":"10日間 無制限","price":3480},
+      {"sku":"eSIM-SKTUL-15","plan":"15日間 無制限","price":4480},
+      {"sku":"eSIM-SKTUL-20","plan":"20日間 無制限","price":5480},
+      {"sku":"eSIM-SKTUL-30","plan":"30日間 無制限","price":6480},
+      {"sku":"eSIM-SKTUL-60","plan":"60日間 無制限","price":9980},
+      {"sku":"eSIM-SKTUL-90","plan":"90日間 無制限","price":12980}
+    ]
+  }
+}

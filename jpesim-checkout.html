@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>購入手続き｜日本eSIM｜EasyGoSim</title><meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="jpesim-flow.css"><link rel="stylesheet" href="jpesim-guide-colors.css"><link rel="stylesheet" href="jpesim-checkout.css">
+</head>
+<body>
+  <main class="flow-wrap reference-checkout">
+    <header class="flow-topbar"><a class="flow-brand" href="korea-esim.html" aria-label="EasyGoSim ホーム"><span>EG</span><b>EasyGoSim</b></a><div class="flow-secure">安全な購入手続き</div></header>
+    <div class="checkout-layout">
+      <aside class="product-side">
+        <p class="side-kicker">Japan eSIM</p><h2>日本旅行のネット環境を準備</h2><p class="side-lead">日本の高速ネットワークで、地図、LINE、交通検索、旅行中の通信を快適に。</p>
+        <div class="network-badges"><span id="side-network">KDDI au</span><b id="side-speed">4G / 5G</b></div>
+        <dl class="product-facts"><div><dt>対象エリア</dt><dd>日本全国</dd></div><div><dt>利用日数</dt><dd id="side-days">—</dd></div><div><dt>ネットワーク</dt><dd id="side-provider">KDDI au</dd></div><div><dt>購入数量</dt><dd id="side-quantity">1枚のeSIM</dd></div></dl>
+        <div class="side-check"><strong>購入前にご確認ください</strong><ul><li>出発前にeSIM対応端末をご確認ください。</li><li>設定時には安定したWi-Fi環境が必要です。</li><li>QRコードは決済後、メールでお送りします。</li></ul></div>
+      </aside>
+      <section class="checkout-main">
+        <p class="eyebrow">注文内容</p><h1>日本eSIMのプランを確認</h1><p class="checkout-intro">套餐、数量及び金額をご確認ください。次の画面で安全に決済できます。</p>
+        <div class="order-box"><div><strong id="plan-name">日本旅行用 eSIM</strong><span id="plan-description">高速データ通信・日本全国対応</span></div><div class="order-price"><small>1枚あたり</small><strong id="unit-price">¥—</strong></div></div>
+        <div class="quantity-row"><span>購入数量</span><div class="quantity-control"><button id="minus" type="button" aria-label="数量を減らす">−</button><b id="quantity">1</b><button id="plus" type="button" aria-label="数量を増やす">＋</button></div></div>
+        <div class="coupon-row"><label for="coupon">クーポンコード</label><div><input id="coupon" type="text" placeholder="コードを入力"><button id="coupon-button" type="button">適用</button></div></div>
+        <div class="total-row"><span>合計</span><strong id="total-price">¥—</strong></div>
+        <div class="payment-info"><strong>安全な決済</strong><p>日本向け決済では、JPY表示のクレジットカードをご利用いただけます。</p><div class="card-brands"><span>Visa</span><span>Mastercard</span><span>JCB</span></div></div>
+        <div class="payment-info"><strong>決済後のご案内</strong><p>決済完了後、入力したメールアドレスへeSIM設定情報をお送りします。</p></div>
+        <div class="help-row"><strong>ご不明点はLINEへ</strong><a href="https://line.me/R/ti/p/@712unbyr" target="_blank" rel="noopener">LINEで相談する</a></div>
+        <button class="flow-btn flow-primary" id="pay-button" type="button">安全な決済へ進む <span>→</span></button><a class="flow-btn flow-secondary" href="korea-esim.html">プラン選択に戻る</a><p class="flow-status" id="flow-status" role="status"></p>
+      </section>
+    </div>
+  </main>
+  <script>
+    (function(){
+      var q=new URLSearchParams(location.search),sku=q.get('sku')||'',variant=q.get('variant')||'',planName=q.get('plan')||'日本旅行用 eSIM',unitPrice=Number(q.get('price')||0),quantity=1;
+      var dayMatch=planName.match(/(\d+)日/),days=dayMatch?dayMatch[1]+'日':'—';
+      var nameEl=document.getElementById('plan-name'),descEl=document.getElementById('plan-description'),unitEl=document.getElementById('unit-price'),totalEl=document.getElementById('total-price'),qtyEl=document.getElementById('quantity');
+      nameEl.textContent=planName;descEl.textContent=planName.indexOf('無制限')>-1?'高速無制限・日本全国対応':'高速データ通信・日本全国対応';document.getElementById('side-days').textContent=days;document.getElementById('side-quantity').textContent='1枚のeSIM';
+      function render(){qtyEl.textContent=quantity;unitEl.textContent=unitPrice?'¥'+unitPrice.toLocaleString('ja-JP'):'¥—';totalEl.textContent=unitPrice?'¥'+(unitPrice*quantity).toLocaleString('ja-JP'):'¥—';document.getElementById('side-quantity').textContent=quantity+'枚のeSIM';}
+      document.getElementById('minus').addEventListener('click',function(){quantity=Math.max(1,quantity-1);render();});document.getElementById('plus').addEventListener('click',function(){quantity=Math.min(5,quantity+1);render();});
+      document.getElementById('coupon-button').addEventListener('click',function(){var status=document.getElementById('flow-status');status.textContent='クーポンコードを確認しています。';status.classList.add('is-visible');});
+      document.getElementById('pay-button').addEventListener('click',function(){var paymentUrl=window.JP_AIRWALLEX_PAYMENT_URLS&&window.JP_AIRWALLEX_PAYMENT_URLS[sku||variant],status=document.getElementById('flow-status');if(paymentUrl){location.href=paymentUrl;return;}status.textContent='決済連携の準備中です。ご注文前のお問い合わせはLINEからお願いいたします。';status.classList.add('is-visible');});render();
+    }());
+  </script>
+</body>
+</html>
