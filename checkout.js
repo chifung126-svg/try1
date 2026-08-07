@@ -14,11 +14,13 @@
   var submit = form.querySelector('button[type="submit"]');
   var isKorea = /^KR|^eSIM-KR/i.test(sku || '');
 
+
   planEl.textContent = plan;
   if (side) side.textContent = plan;
   var formatted = price ? '¥' + Number(price).toLocaleString('ja-JP') : '料金確認中';
   priceEl.textContent = formatted;
   if (total) total.textContent = formatted;
+
 
   if (isKorea) {
     document.title = '韓国旅行用eSIMの購入手続き | EasyGoSim';
@@ -29,15 +31,18 @@
     document.getElementById('summary-type').textContent = plan.indexOf('無制限') > -1 ? '高速無制限' : '毎日2GB高速';
   }
 
+
   var match = plan.match(/(\\d+)日間\\s*(\\d+)GB/);
   if (spec) spec.textContent = match ? match[2] + 'GB / ' + match[1] + '日間' : 'データ通信専用';
   var today = new Date();
   date.min = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
 
+
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     if (!sku) { message.textContent = '商品情報を確認できません。商品ページからもう一度お試しください。'; message.classList.add('is-visible'); return; }
+
 
     submit.disabled = true;
     submit.textContent = '決済画面を準備しています…';
@@ -51,7 +56,8 @@
         body: JSON.stringify({
           market: 'JP',
           countryCode: 'KR',
-          skuId: sku.replace(/^eSIM-/, ''),
+          // Keep the complete database SKU, e.g. eSIM-KR2G-01.
+          skuId: query.get('variant') || sku,
           quantity: 1,
           customerName: data.get('name'),
           customerEmail: data.get('email')
@@ -60,11 +66,3 @@
       var result = await response.json();
       if (!response.ok || !result.paymentUrl) throw new Error(result.error || '決済ページを作成できませんでした。');
       window.location.assign(result.paymentUrl);
-    } catch (error) {
-      message.textContent = error.message || '決済ページを作成できませんでした。';
-      message.classList.add('is-visible');
-      submit.disabled = false;
-      submit.textContent = '注文内容を確認する →';
-    }
-  });
-})();
