@@ -48,9 +48,15 @@ async function getAirwallexToken() {
     'x-api-key': requireEnv('AIRWALLEX_API_KEY')
   };
   if (process.env.AIRWALLEX_LOGIN_AS) headers['x-login-as'] = process.env.AIRWALLEX_LOGIN_AS;
-  const result = await jsonRequest(`${AIRWALLEX_BASE_URL}/api/v1/authentication/login`, { method: 'POST', headers });
-  airwallexToken = { value: result.token, expiresAt: new Date(result.expires_at).getTime() };
-  return airwallexToken.value;
+  try {
+    const result = await jsonRequest(`${AIRWALLEX_BASE_URL}/api/v1/authentication/login`, { method: 'POST', headers });
+    airwallexToken = { value: result.token, expiresAt: new Date(result.expires_at).getTime() };
+    return airwallexToken.value;
+  } catch (error) {
+    const code = error?.data?.code || error?.data?.error?.code || 'unknown';
+    const status = error?.status || 'unknown';
+    throw new Error(`Airwallex authentication failed (HTTP ${status}, code ${code})`);
+  }
 }
 
 async function airwallexRequest(path, options = {}) {
