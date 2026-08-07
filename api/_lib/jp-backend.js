@@ -62,8 +62,23 @@ async function airwallexRequest(path, options = {}) {
 }
 
 async function findJapanSku(skuId) {
-  const rows = await supabaseRequest(`skus?sku_id=eq.${encodeURIComponent(skuId)}&active=eq.true&country_code=eq.KR&currency=eq.JPY&select=*`);
-  return rows[0] || null;
+  const raw = String(skuId || '').trim();
+  if (!raw) return null;
+
+  // Accept both the catalog variant (eSIM-KR2G-01) and the database SKU (KR2G-01).
+  const candidates = [...new Set([
+    raw,
+    raw.replace(/^eSIM-/i, ''),
+    raw.startsWith('eSIM-') ? raw : `eSIM-${raw}`
+  ])];
+
+  for (const candidate of candidates) {
+    const rows = await supabaseRequest(
+      `skus?sku_id=eq.${encodeURIComponent(candidate)}&active=eq.true&country_code=eq.KR&currency=eq.JPY&select=*`
+    );
+    if (rows[0]) return rows[0];
+  }
+  return null;
 }
 
 async function listJapanSkus() {
