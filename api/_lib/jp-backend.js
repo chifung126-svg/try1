@@ -77,7 +77,10 @@ async function findJapanSku(skuId) {
       `skus?sku_id=eq.${encodeURIComponent(candidate)}&select=*`
     );
     const product = rows[0];
-    if (product && product.active === true && product.country_code === 'KR' && product.currency === 'JPY') {
+        const active = product && (product.active === true || String(product.active).toLowerCase() === 'true');
+        const countryCode = String(product && product.country_code || '').trim().toUpperCase();
+        const currency = String(product && product.currency || '').trim().toUpperCase();
+        if (product && active && countryCode === 'KR' && currency === 'JPY') {
       return product;
     }
   }
