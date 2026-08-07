@@ -74,9 +74,12 @@ async function findJapanSku(skuId) {
 
   for (const candidate of candidates) {
     const rows = await supabaseRequest(
-      `skus?sku_id=eq.${encodeURIComponent(candidate)}&active=eq.true&country_code=eq.KR&currency=eq.JPY&select=*`
+      `skus?sku_id=eq.${encodeURIComponent(candidate)}&select=*`
     );
-    if (rows[0]) return rows[0];
+    const product = rows[0];
+    if (product && product.active === true && product.country_code === 'KR' && product.currency === 'JPY') {
+      return product;
+    }
   }
   return null;
 }
