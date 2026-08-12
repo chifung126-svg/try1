@@ -33,7 +33,7 @@
         price: selected.dataset.price || '',
         variant: 'malaysia_manual'
       });
-      window.location.href = 'checkout.html?' + params.toString();
+      window.location.href = '/myesim/checkout.html?' + params.toString();
     });
   });
 }());
