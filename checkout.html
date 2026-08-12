@@ -12,6 +12,9 @@
     label{display:block;margin-top:18px;font-size:13px;font-weight:800}input,select{width:100%;margin-top:8px;border:1px solid #dfe4e9;border-radius:12px;padding:14px;font:inherit;background:#fff;color:var(--ink)}input:focus,select:focus{outline:3px solid #ec176230;border-color:var(--pink)}.help{margin:7px 0 0;color:var(--muted);font-size:11px;line-height:1.6}.required{color:var(--pink)}.manual{margin-top:18px;padding:14px;border-radius:14px;background:#fff8e7;color:#6b5519;font-size:12px;line-height:1.65}.manual strong{display:block;color:#8b6710;margin-bottom:4px}.checks{margin:18px 0 0;padding:0;list-style:none;color:#315a43;font-size:12px;line-height:1.8}.checks li{margin-top:3px}.pay{width:100%;border:0;border-radius:13px;padding:16px;margin-top:21px;background:var(--pink);color:#fff;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 12px 25px #ec176238}.pay:hover{background:#c90f52}.pay:disabled{background:#b8bec7;box-shadow:none;cursor:not-allowed}.fine{margin-top:12px;text-align:center;color:var(--muted);font-size:11px;line-height:1.6}.policy{margin-top:20px;text-align:center;color:var(--muted);font-size:11px}.policy a{text-decoration:underline;text-underline-offset:2px}.error{display:none;margin-top:12px;padding:11px;border-radius:10px;background:#fff0f0;color:#a51616;font-size:12px}.error.show{display:block}
     @media(max-width:700px){.wrap{width:calc(100% - 24px)}header{height:62px}.logo{width:142px}.back{font-size:12px}main{padding:15px 0 40px}.grid{display:flex;flex-direction:column;gap:12px}.card{width:100%;border-radius:20px;padding:19px}.card h1{font-size:27px;margin:9px 0}.intro{font-size:13px}.summary{margin-top:16px;padding:16px}.summary h2{font-size:25px}.price strong{font-size:27px}.form-card{order:-1}.form-card h2{font-size:20px;margin:0 0 5px}.pay{position:sticky;bottom:10px;z-index:2}.manual{font-size:11px}}
   </style>
+  <style>
+    label[for="email"], #email, #email + .help, label[for="name"], #name { display: none !important; }
+  </style>
 </head>
 <body>
   <header><div class="wrap"><a href="index.html" aria-label="EasyGoSim"><img class="logo" src="assets/easygosim-logo.png" alt="EasyGoSim"></a><a class="back" href="index.html">商品ページに戻る</a></div></header>
@@ -52,5 +55,16 @@
     const min=new Date();min.setDate(min.getDate()+1);document.querySelector("#departure").min=min.toISOString().slice(0,10);
     document.querySelector("#pay").addEventListener("click",async()=>{const button=document.querySelector("#pay"),email=document.querySelector("#email").value.trim(),departure=document.querySelector("#departure").value,name=document.querySelector("#name").value.trim(),error=document.querySelector("#error");error.classList.remove("show");if(!email||!email.includes("@")){error.textContent="メールアドレスを入力してください。";error.classList.add("show");return}if(currentProduct.requiresDepartureDate&&!departure){error.textContent="出発日を選択してください。";error.classList.add("show");return}button.disabled=true;button.textContent="決済ページを準備中…";try{const response=await fetch("/api/create-order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({product_key:params.get("product")||"malaysia_manual",days:Number(params.get("days")||7),email,name,departure_date:departure})});const result=await response.json();if(!response.ok||!result.payment_url)throw new Error(result.error||"決済ページを作成できませんでした。");window.location.href=result.payment_url}catch(e){error.textContent=e.message||"決済ページを作成できませんでした。";error.classList.add("show");button.disabled=false;button.textContent="Airwallexで支払う"}});
   </script>
+<script>
+  document.querySelector("#pay").addEventListener("click",async(event)=>{
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const button=document.querySelector("#pay"),departure=document.querySelector("#departure").value,error=document.querySelector("#error");
+    error.classList.remove("show");
+    if(currentProduct.requiresDepartureDate&&!departure){error.textContent="出発日を選択してください。";error.classList.add("show");return}
+    button.disabled=true;button.textContent="決済ページを準備中…";
+    try{const response=await fetch("/api/create-order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({product_key:params.get("product")||"malaysia_manual",days:Number(params.get("days")||7),departure_date:departure})});const result=await response.json();if(!response.ok||!result.payment_url)throw new Error(result.error||"決済ページを作成できませんでした。");window.location.href=result.payment_url}catch(e){error.textContent=e.message||"決済ページを作成できませんでした。";error.classList.add("show");button.disabled=false;button.textContent="Airwallexで安全に支払う"}
+  },true);
+</script>
 </body>
 </html>
