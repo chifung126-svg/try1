@@ -5,10 +5,10 @@ function orderNo() {
   return `EGS-JP-MY-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomBytes(3).toString("hex").toUpperCase()}`;
 }
 
-export default async function handler(request) {
-  if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
+export default async function handler(request, response) {
+  if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405, response);
   try {
-    const body = await request.json();
+    const body = typeof request.body === "string" ? JSON.parse(request.body) : (request.body || {});
     const email = String(body.email || "").trim().toLowerCase();
     const departureDate = String(body.departure_date || "").trim();
     const days = Number(body.days);
@@ -38,9 +38,9 @@ export default async function handler(request) {
       headers: { prefer: "return=minimal" },
       body: JSON.stringify({ order_no: no, product_key: "malaysia_manual", plan_days: days, data_allowance: plan.data, amount: plan.amount, currency: "JPY", customer_email: email || null, customer_name: name, departure_date: departureDate, payment_status: "pending", fulfillment_status: "awaiting_payment", airwallex_payment_link_id: checkout.id, airwallex_payment_url: checkout.url })
     });
-    return json({ ok: true, order_no: no, payment_url: checkout.url });
+    return json({ ok: true, order_no: no, payment_url: checkout.url }, 200, response);
   } catch (error) {
     console.error("JP manual order failed", error);
-    return json({ ok: false, error: "Unable to create payment" }, 500);
+    return json({ ok: false, error: "Unable to create payment" }, 500, response);
   }
 }

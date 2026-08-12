@@ -1,6 +1,10 @@
 const jsonHeaders = { "content-type": "application/json; charset=utf-8" };
 
-export function json(body, status = 200) {
+export function json(body, status = 200, response) {
+  if (response) {
+    response.status(status).json(body);
+    return;
+  }
   return new Response(JSON.stringify(body), { status, headers: jsonHeaders });
 }
 
