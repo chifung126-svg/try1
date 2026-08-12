@@ -55,5 +55,12 @@
         .replace('\u73fe\u5730\u3067\u56de\u7dda\u3092\u5207\u66ff', '\u73fe\u5730\u3067\u56de\u7dda\u3092\u5207\u308a\u66ff\u3048\u308b');
     });
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    const plans=[...document.querySelectorAll(".plan")];
+    plans.forEach((plan,index)=>{plan.classList.toggle("best",index===0);const ribbon=plan.querySelector(".ribbon");if(index===0&&!ribbon){const tag=document.createElement("span");tag.className="ribbon";tag.textContent="おすすめ";plan.prepend(tag)}if(index>0&&ribbon)ribbon.remove();const button=plan.querySelector("button");if(button){button.disabled=false;button.addEventListener("click",()=>{location.href=`checkout.html?days=${[7,15,30][index]}&product=malaysia_manual`})}});
+    document.querySelector(".notice")?.remove();
+  });
+</script>
 </body>
 </html>
