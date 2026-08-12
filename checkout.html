@@ -56,6 +56,7 @@
     document.querySelector("#pay").addEventListener("click",async()=>{const button=document.querySelector("#pay"),email=document.querySelector("#email").value.trim(),departure=document.querySelector("#departure").value,name=document.querySelector("#name").value.trim(),error=document.querySelector("#error");error.classList.remove("show");if(!email||!email.includes("@")){error.textContent="メールアドレスを入力してください。";error.classList.add("show");return}if(currentProduct.requiresDepartureDate&&!departure){error.textContent="出発日を選択してください。";error.classList.add("show");return}button.disabled=true;button.textContent="決済ページを準備中…";try{const response=await fetch("/api/create-order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({product_key:params.get("product")||"malaysia_manual",days:Number(params.get("days")||7),email,name,departure_date:departure})});const result=await response.json();if(!response.ok||!result.payment_url)throw new Error(result.error||"決済ページを作成できませんでした。");window.location.href=result.payment_url}catch(e){error.textContent=e.message||"決済ページを作成できませんでした。";error.classList.add("show");button.disabled=false;button.textContent="Airwallexで支払う"}});
   </script>
 <script>
+  document.querySelector(".form-card .intro").textContent="出発日をご入力ください。決済ページでお客様情報を入力します。";
   document.querySelector("#pay").addEventListener("click",async(event)=>{
     event.preventDefault();
     event.stopImmediatePropagation();
