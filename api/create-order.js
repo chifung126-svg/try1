@@ -14,7 +14,7 @@ export default async function handler(request) {
     const days = Number(body.days);
     const name = String(body.name || "").trim() || null;
     const plan = plans[days];
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) return json({ ok: false, error: "Invalid email" }, 400);
+    if (email && !/^\S+@\S+\.\S+$/.test(email)) return json({ ok: false, error: "Invalid email" }, 400);
     if (!plan || !/^\d{4}-\d{2}-\d{2}$/.test(departureDate)) return json({ ok: false, error: "Invalid Malaysia plan or departure date" }, 400);
 
     const no = orderNo();
@@ -36,7 +36,7 @@ export default async function handler(request) {
     await supabaseRequest("jp_manual_orders", {
       method: "POST",
       headers: { prefer: "return=minimal" },
-      body: JSON.stringify({ order_no: no, product_key: "malaysia_manual", plan_days: days, data_allowance: plan.data, amount: plan.amount, currency: "JPY", customer_email: email, customer_name: name, departure_date: departureDate, payment_status: "pending", fulfillment_status: "awaiting_payment", airwallex_payment_link_id: checkout.id, airwallex_payment_url: checkout.url })
+      body: JSON.stringify({ order_no: no, product_key: "malaysia_manual", plan_days: days, data_allowance: plan.data, amount: plan.amount, currency: "JPY", customer_email: email || null, customer_name: name, departure_date: departureDate, payment_status: "pending", fulfillment_status: "awaiting_payment", airwallex_payment_link_id: checkout.id, airwallex_payment_url: checkout.url })
     });
     return json({ ok: true, order_no: no, payment_url: checkout.url });
   } catch (error) {
