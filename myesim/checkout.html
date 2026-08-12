@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お申し込み内容の確認｜マレーシア eSIM｜EasyGoSim</title>
+  <style>
+    :root{--pink:#ec1762;--ink:#151619;--muted:#68707a;--line:#e8ebef;--soft:#fff7fa;--green:#eafff2}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#eefaff,#fff7fa);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif}.wrap{width:min(980px,calc(100% - 28px));margin:auto}a{color:inherit;text-decoration:none}
+    header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center}.logo{width:154px}.back{margin-left:auto;color:var(--muted);font-size:13px;font-weight:700}
+    main{padding:30px 0 70px}.grid{display:grid;grid-template-columns:1fr .95fr;gap:20px;align-items:start}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 16px 40px #38465714}.eyebrow{color:#c40e4e;font-size:11px;font-weight:900;letter-spacing:.1em}.card h1{font-size:32px;line-height:1.2;margin:12px 0}.intro{color:var(--muted);line-height:1.8;font-size:14px}.summary{margin-top:22px;padding:18px;border-radius:17px;background:#151619;color:#fff}.summary small{color:#ff9dba;font-weight:800}.summary h2{margin:8px 0;font-size:28px}.summary p{margin:0;color:#d7dae0;font-size:13px}.price{display:flex;justify-content:space-between;align-items:end;margin-top:22px;padding-top:18px;border-top:1px solid #3c3e43}.price strong{font-size:29px}.price span{color:#bfc4cb;font-size:12px}
+    label{display:block;margin-top:18px;font-size:13px;font-weight:800}input,select{width:100%;margin-top:8px;border:1px solid #dfe4e9;border-radius:12px;padding:14px;font:inherit;background:#fff;color:var(--ink)}input:focus,select:focus{outline:3px solid #ec176230;border-color:var(--pink)}.help{margin:7px 0 0;color:var(--muted);font-size:11px;line-height:1.6}.required{color:var(--pink)}.manual{margin-top:18px;padding:14px;border-radius:14px;background:#fff8e7;color:#6b5519;font-size:12px;line-height:1.65}.manual strong{display:block;color:#8b6710;margin-bottom:4px}.checks{margin:18px 0 0;padding:0;list-style:none;color:#315a43;font-size:12px;line-height:1.8}.checks li{margin-top:3px}.pay{width:100%;border:0;border-radius:13px;padding:16px;margin-top:21px;background:var(--pink);color:#fff;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 12px 25px #ec176238}.pay:hover{background:#c90f52}.pay:disabled{background:#b8bec7;box-shadow:none;cursor:not-allowed}.fine{margin-top:12px;text-align:center;color:var(--muted);font-size:11px;line-height:1.6}.policy{margin-top:20px;text-align:center;color:var(--muted);font-size:11px}.policy a{text-decoration:underline;text-underline-offset:2px}.error{display:none;margin-top:12px;padding:11px;border-radius:10px;background:#fff0f0;color:#a51616;font-size:12px}.error.show{display:block}
+    @media(max-width:700px){.wrap{width:calc(100% - 24px)}header{height:62px}.logo{width:142px}.back{font-size:12px}main{padding:15px 0 40px}.grid{display:flex;flex-direction:column;gap:12px}.card{width:100%;border-radius:20px;padding:19px}.card h1{font-size:27px;margin:9px 0}.intro{font-size:13px}.summary{margin-top:16px;padding:16px}.summary h2{font-size:25px}.price strong{font-size:27px}.form-card{order:-1}.form-card h2{font-size:20px;margin:0 0 5px}.pay{position:sticky;bottom:10px;z-index:2}.manual{font-size:11px}}
+  </style>
+  <style>
+    label[for="email"], #email, #email + .help, label[for="name"], #name { display: none !important; }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><a href="index.html" aria-label="EasyGoSim"><img class="logo" src="assets/easygosim-logo.png" alt="EasyGoSim"></a><a class="back" href="index.html">商品ページに戻る</a></div></header>
+  <main><div class="wrap grid">
+    <section class="card">
+      <span class="eyebrow">ORDER SUMMARY</span><h1>お申し込み内容の確認</h1><p class="intro">プランとお客様情報をご確認ください。次の画面でAirwallexの安全な決済ページへ進みます。</p>
+      <div class="summary"><small>MALAYSIA eSIM · 超高速5G</small><h2 id="plan-name">7日プラン</h2><p id="plan-spec">40GB｜現地電話番号付き</p><div class="price"><span>お支払い金額</span><strong id="plan-price">¥1,980</strong></div></div>
+      <ul class="checks"><li>✓ 決済後、注文内容を確認します</li><li id="manual-delivery-note">✓ eSIMは出発日の前日までにメールでお送りします</li><li>✓ QRコードと設定案内をメールでお届けします</li></ul>
+    </section>
+    <section class="card form-card"><span class="eyebrow">CUSTOMER INFORMATION</span><h2>お客様情報</h2><p class="intro">QRコードを受け取るメールアドレスと出発日をご入力ください。</p>
+      <label for="email">メールアドレス <span class="required">*</span></label><input id="email" type="email" autocomplete="email" placeholder="your@email.com" required><p class="help">決済完了とeSIMの送付先になります。</p>
+      <div id="departure-field"><label for="departure">マレーシア出発日 <span class="required">*</span></label><input id="departure" type="date" required><p class="help">このマレーシア商品は手動発行のため、eSIMは出発日の前日までにメールでお送りします。</p></div>
+      <label for="name">お名前（任意）</label><input id="name" type="text" autocomplete="name" placeholder="お名前">
+      <div id="manual-notice" class="manual"><strong>この商品について</strong>この商品は通常のJoyTel自動発行商品ではありません。お支払い後、出発日を確認してスタッフが手動でeSIMを発行します。</div>
+      <div id="error" class="error"></div><button id="pay" class="pay" type="button">Airwallexで安全に支払う</button><p class="fine">カード情報はEasyGoSimでは保存されません。決済はAirwallexの安全な決済ページで行われます。</p><p class="policy"><a href="#">返金ポリシー</a>　｜　<a href="#">利用規約</a>　｜　<a href="#">プライバシーポリシー</a></p>
+    </section>
+  </div></main>
+  <script>
+    // Product-specific fulfillment rules. Do not apply the departure-date rule to JoyTel products.
+    const products={
+      malaysia_manual:{requiresDepartureDate:true, fulfillment:"manual"},
+      joytel:{requiresDepartureDate:false, fulfillment:"joytel"}
+    };
+    const params=new URLSearchParams(location.search);
+    const currentProduct=products[params.get("product")]||products.malaysia_manual;
+    const plans={
+      "7":{name:"7日プラン",spec:"40GB｜現地電話番号付き",price:"¥1,980",product:"malaysia_manual"},
+      "15":{name:"15日プラン",spec:"80GB｜現地電話番号付き",price:"¥2,640",product:"malaysia_manual"},
+      "30":{name:"30日プラン",spec:"120GB｜現地電話番号付き",price:"¥3,840",product:"malaysia_manual"}
+    };
+    const plan=plans[params.get("days")]||plans["7"];
+    document.querySelector("#plan-name").textContent=plan.name;document.querySelector("#plan-spec").textContent=plan.spec;document.querySelector("#plan-price").textContent=plan.price;
+    const departureField=document.querySelector("#departure-field");
+    departureField.hidden=!currentProduct.requiresDepartureDate;
+    document.querySelector("#departure").required=currentProduct.requiresDepartureDate;
+    document.querySelector("#manual-delivery-note").hidden=!currentProduct.requiresDepartureDate;
+    document.querySelector("#manual-notice").hidden=!currentProduct.requiresDepartureDate;
+    const min=new Date();min.setDate(min.getDate()+1);document.querySelector("#departure").min=min.toISOString().slice(0,10);
+    document.querySelector("#pay").addEventListener("click",async()=>{const button=document.querySelector("#pay"),email=document.querySelector("#email").value.trim(),departure=document.querySelector("#departure").value,name=document.querySelector("#name").value.trim(),error=document.querySelector("#error");error.classList.remove("show");if(!email||!email.includes("@")){error.textContent="メールアドレスを入力してください。";error.classList.add("show");return}if(currentProduct.requiresDepartureDate&&!departure){error.textContent="出発日を選択してください。";error.classList.add("show");return}button.disabled=true;button.textContent="決済ページを準備中…";try{const response=await fetch("/api/create-order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({product_key:params.get("product")||"malaysia_manual",days:Number(params.get("days")||7),email,name,departure_date:departure})});const result=await response.json();if(!response.ok||!result.payment_url)throw new Error(result.error||"決済ページを作成できませんでした。");window.location.href=result.payment_url}catch(e){error.textContent=e.message||"決済ページを作成できませんでした。";error.classList.add("show");button.disabled=false;button.textContent="Airwallexで支払う"}});
+  </script>
+<script>
+  document.querySelector(".form-card .intro").textContent="出発日をご入力ください。決済ページでお客様情報を入力します。";
+  document.querySelector("#pay").addEventListener("click",async(event)=>{
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const button=document.querySelector("#pay"),departure=document.querySelector("#departure").value,error=document.querySelector("#error");
+    error.classList.remove("show");
+    if(currentProduct.requiresDepartureDate&&!departure){error.textContent="出発日を選択してください。";error.classList.add("show");return}
+    button.disabled=true;button.textContent="決済ページを準備中…";
+    try{const response=await fetch("/api/create-order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({product_key:params.get("product")||"malaysia_manual",days:Number(params.get("days")||7),departure_date:departure})});const result=await response.json();if(!response.ok||!result.payment_url)throw new Error(result.error||"決済ページを作成できませんでした。");window.location.href=result.payment_url}catch(e){error.textContent=e.message||"決済ページを作成できませんでした。";error.classList.add("show");button.disabled=false;button.textContent="Airwallexで安全に支払う"}
+  },true);
+</script>
+</body>
+</html>
