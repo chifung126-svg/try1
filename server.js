@@ -185,7 +185,7 @@ function sendJson(res, status, payload, requestOrigin) {
 
 const server = http.createServer((req, res) => {
   const pathname = (req.url || '/').split('?')[0];
-  if (req.method === 'OPTIONS' && pathname.startsWith('/api/')) { sendJson(res, 204, {}); return; }
+  if (req.method === 'OPTIONS' && pathname.startsWith('/api/')) { sendJson(res, 204, {}, req.headers.origin); return; }
   if (pathname.startsWith('/api/')) {
     handleApi(req, res, pathname).catch(error => sendJson(res, 500, { error: 'Internal server error' }));
     return;
