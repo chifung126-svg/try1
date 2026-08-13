@@ -1,9 +1,1 @@
-{
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/airwallex-webhook", "destination": "/api/airwallex-webhook" },
-    { "source": "/myesim", "destination": "/myesim/index.html" },
-    { "source": "/myesim/", "destination": "/myesim/index.html" },
-    { "source": "/myesim/checkout", "destination": "/myesim/checkout.html" }
-  ]
-}
+{"cleanUrls":true,"rewrites":[{"source":"/airwallex-webhook","destination":"/api/airwallex-webhook"},{"source":"/myesim","destination":"/myesim/index.html"},{"source":"/myesim/","destination":"/myesim/index.html"},{"source":"/myesim/checkout","destination":"/myesim/checkout.html"},{"source":"/","destination":"/home.html"}]}
