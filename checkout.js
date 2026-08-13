@@ -37,7 +37,7 @@
     message.classList.remove('is-visible');
     var data = new FormData(form);
     try {
-      var response = await fetch('https://easygosim-japan-production.up.railway.app/api/create-order', {
+      var response = await fetch('/api/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
