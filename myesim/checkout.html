@@ -21,7 +21,7 @@
   <main><div class="wrap grid">
     <section class="card">
       <span class="eyebrow">ORDER SUMMARY</span><h1>お申し込み内容の確認</h1><p class="intro">プランとお客様情報をご確認ください。次の画面でAirwallexの安全な決済ページへ進みます。</p>
-      <div class="summary"><small>MALAYSIA eSIM · 超高速5G</small><h2 id="plan-name">7日プラン</h2><p id="plan-spec">40GB｜現地電話番号付き</p><div class="price"><span>お支払い金額</span><strong id="plan-price">¥1,980</strong></div></div>
+      <div class="summary"><small>MALAYSIA eSIM · 超高速5G</small><h2 id="plan-name">7日プラン</h2><p id="plan-spec">50GB｜現地電話番号付き</p><div class="price"><span>お支払い金額</span><strong id="plan-price">¥1,980</strong></div></div>
       <ul class="checks"><li>✓ 決済後、注文内容を確認します</li><li id="manual-delivery-note">✓ eSIMは出発日の前日までにメールでお送りします</li><li>✓ QRコードと設定案内をメールでお届けします</li></ul>
     </section>
     <section class="card form-card"><span class="eyebrow">CUSTOMER INFORMATION</span><h2>お客様情報</h2><p class="intro">QRコードを受け取るメールアドレスと出発日をご入力ください。</p>
@@ -41,9 +41,9 @@
     const params=new URLSearchParams(location.search);
     const currentProduct=products[params.get("product")]||products.malaysia_manual;
     const plans={
-      "7":{name:"7日プラン",spec:"40GB｜現地電話番号付き",price:"¥1,980",product:"malaysia_manual"},
-      "15":{name:"15日プラン",spec:"80GB｜現地電話番号付き",price:"¥2,640",product:"malaysia_manual"},
-      "30":{name:"30日プラン",spec:"120GB｜現地電話番号付き",price:"¥3,840",product:"malaysia_manual"}
+      "7":{name:"7日プラン",spec:"50GB｜現地電話番号付き",price:"¥1,980",product:"malaysia_manual"},
+      "15":{name:"15日プラン",spec:"150GB｜現地電話番号付き",price:"¥2,640",product:"malaysia_manual"},
+      "30":{name:"30日プラン",spec:"300GB｜現地電話番号付き",price:"¥3,840",product:"malaysia_manual"}
     };
     const plan=plans[params.get("days")]||plans["7"];
     document.querySelector("#plan-name").textContent=plan.name;document.querySelector("#plan-spec").textContent=plan.spec;document.querySelector("#plan-price").textContent=plan.price;
