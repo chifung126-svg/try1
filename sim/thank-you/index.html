@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant-HK"><head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6N5S0YYG8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z6N5S0YYG8');
+</script><link rel="icon" type="image/png" href="/easygosim-logo.png?v=eg1"><link rel="apple-touch-icon" href="/easygosim-logo.png?v=eg1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>付款完成｜EasyGoSIM</title>
+<meta name="robots" content="noindex,nofollow">
+
+
+
+<style>body{margin:0;background:#f2fbf6;color:#171717;font-family:"Noto Sans TC","PingFang HK","Microsoft JhengHei",sans-serif}.box{max-width:620px;margin:12vh auto;padding:38px 28px;background:#fff;border:1px solid #cdeeda;border-radius:24px;box-shadow:0 16px 44px #00000012;text-align:center}.logo{height:40px}.ok{font-size:52px;margin:18px 0 6px}.box h1{margin:0;font-size:30px}.box p{color:#676767;line-height:1.8}.btn{display:inline-block;margin-top:14px;padding:13px 20px;border-radius:12px;background:#0ea36b;color:#fff;font-weight:800;text-decoration:none}</style>
+</head><body><main class="box"><img class="logo" src="/easygosim-logo.png?v=eg2" alt="EasyGoSIM"><div class="ok">✅</div><h1 id="page-title">付款狀態確認中</h1><p id="order-summary">正在確認訂單資料…</p><a class="btn" href="../">返回 EasyGoSIM</a> <a class="btn" style="background:#25d366" href="https://wa.me/85246922013" target="_blank" rel="noopener noreferrer">WhatsApp 客服</a></main>
+<script>
+(function(){
+  const p=new URLSearchParams(location.search);
+  const id=p.get('transaction_id')||p.get('order_id')||p.get('order')||'';
+  const value=p.get('value')||0;
+  const title=document.getElementById('page-title');
+  if(id && window.egTrackPurchase) window.egTrackPurchase(id,value,'HKD');
+  const summary=document.getElementById('order-summary');
+  if(!id){summary.textContent='付款已提交，我哋會按付款確認安排寄出；如需協助，請電郵 support@easygosim.com。';return}
+  fetch('https://checkout-api-production-bfc1.up.railway.app/api/orders/'+encodeURIComponent(id)).then(r=>r.ok?r.json():null).then(order=>{
+    if(!order){summary.textContent='付款已提交，我哋會按付款確認安排寄出；如需協助，請電郵 support@easygosim.com。';return}
+    const isPaid=['paid','processing','shipped'].includes(order.status);
+    title.textContent=isPaid?'付款完成，多謝你！':'付款狀態確認中';
+    const status=order.status==='paid'?'已付款，等待處理':order.status==='processing'?'正在處理':order.status==='shipped'?'已寄出':'正在確認付款';
+    const welcome=order.welcome_code?'<br><br>下次購買 9 折優惠碼：<b>'+order.welcome_code+'</b>':'<br><br>如需下次 9 折優惠碼，請於結賬填寫電郵。';
+    summary.innerHTML='訂單編號：<b>'+order.reference+'</b><br>'+order.product_name+'・'+order.plan_name+'・'+Number(order.days)+' 日<br>合共 HK$'+order.amount+'・'+status+welcome+'<br><br>寄件安排完成後會按你填寫的資料處理；如需協助，請電郵 support@easygosim.com。';
+  }).catch(()=>{summary.textContent='付款已提交，我哋會按付款確認安排寄出；如需協助，請電郵 support@easygosim.com。'});
+})();
+</script></body></html>

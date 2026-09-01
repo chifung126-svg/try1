@@ -1,8 +1,6 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    {"source": "/sim", "destination": "https://easygosim-physical-site.vercel.app/sim/"},
-    {"source": "^/sim/(.*)$", "destination": "https://easygosim-physical-site.vercel.app/sim/$1"},
     {"source": "/products/:path*", "destination": "/myesim/index.html"},
     {"source": "/airwallex-webhook", "destination": "/api/airwallex-webhook"},
     {"source": "/myesim/checkout", "destination": "/myesim/checkout.html"},
